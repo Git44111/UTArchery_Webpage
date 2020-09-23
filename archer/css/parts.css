@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @charset "UTF-8";
 
 /*PCversionではいらないものを抹殺*/
@@ -34,10 +41,16 @@ a.anchor {
 }
 
 header {
+    height : 35px;
+    position : relative;
+    z-index: 1;
     text-align: center;
     padding: auto;
     margin: 0px 0px 0px 0px;
-    background-color: #bfe3ea;
+    background-image:url("../img/header.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    /*background: linear-gradient(to right, #184156, #36809C);*/
     float: center;
     font-size: 25px;
     font-family: 'M plus 1p', sans-serif;
@@ -45,11 +58,13 @@ header {
 
 /* 【グローバルナビゲーション】 */
 gnav {
-    z-index: 1;
+    height : 35px;
+    position : relative;
+    z-index: 2;/*上二つはIE用に試しに足してみている*/
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
-    background-color: rgb(255, 245, 225);
-    border-bottom: 2px #336797 solid;
+    background-color: #333333;
+    border-bottom: 2px #8dbe07 solid;
     /* フッタの下境界線 */
 }
 
@@ -67,11 +82,10 @@ gnav li {
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 400;
     padding: 0px 7px 0px 7px;
-
 }
 
 gnav a {
-    color: #0c4155;
+    color: #ffffff;
     /* 文字色 */
     text-decoration: none;
     display: block;
@@ -84,21 +98,27 @@ gnav a.active{
 }
 
 gnav a:hover {
-    color: #0cc3c3;
-    border-bottom: 2px #f49f19 solid;
+    color: #dbe319;
+    border-bottom: 3px #f49f19 solid;
     /* ヘッダメニューの下境界線 */
 }
 
 eyecatch {
+    /*height : 220px;*/
     overflow: hidden;
     position:relative;
+/*    background-color:#01678d;*/
 }
 
 .photo_eyecatch {
     width: 100%;
     height: 220px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     position : relative;
+/*    position : absolute;
+    top:0px;
+    left:0px;    */
     z-index: -2;
 }
 
@@ -107,9 +127,15 @@ eyecatch {
     width:calc(100% - 30px);
     color: #ffffff;
     margin : 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position : absolute;
     top:10px;
     left:10px;
@@ -144,7 +170,7 @@ eyecatch a:active {
 lnav {
     background-color: #ffffff;
     grid-area: lnav;
-    margin: 0px 2px 0px 5px;
+    margin: 0px 2px 0px 2px;
     width: 177px;
 }
 
@@ -157,7 +183,7 @@ lnav ul {
 高さはemで指定(文字サイズを基準にする)
 */
 lnav li {
-    font-size: 20px;
+    font-size: 18px;
     font-family: "M plus 1p", "Helvetica", sans-serif;
     font-weight: 300;
     line-height: 2.2em;
@@ -183,7 +209,7 @@ lnav li.sub {
 
 lnav li.subsub {
     font-weight: 400;
-    margin-left: 10px;
+    margin-left: 12px;
     font-size: 12px;
     line-height: 1.6em;
     margin-bottom: 4px;
@@ -205,6 +231,8 @@ lnav a:hover {
 /* 【パンくずリスト】 */
 ol {
     list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
@@ -230,6 +258,7 @@ main {
 }
 
 footer {
+    display : -ms-grid;
     display : grid;
     margin : 10px 0px 0px 0px;
     padding : 5px 0px 0px 0px;
@@ -237,15 +266,19 @@ footer {
     /* 全体の文字色 */
     font-weight: 500;
     background-color: #f3f8f8;
+    -ms-grid-rows: 56px 20px;
     grid-template-rows: 56px 20px;
+    -ms-grid-columns: 35% 30% 35%;
     grid-template-columns: 35% 30% 35%;
-    grid-template-areas:
+        grid-template-areas:
         "zone1 zone2 zone3"
         "cpright cpright cpright";
     font-size: 12px;
     border-top : 1px #246579 solid;
 }
 .zone1{ 
+    -ms-grid-row: 1; 
+    -ms-grid-column: 1; 
     padding : 0px 0px 0px 30px; 
     grid-area: zone1;
     text-align: left;
@@ -253,19 +286,30 @@ footer {
     color: #045867;
 }
 .zone2{
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
     grid-area: zone2;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     font-size:12px;
     color: #045867;
 }
 .zone3{
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
     padding : 10px 0px 0px 0px;    
     grid-area: zone3;
     text-align: center;
     font-size:14px;
 }
 .cpright{
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
     padding : 0px 0px 0px 10px;    
     font-family: "Mplus 1p" sans-serif;
     font-weight : 400;
@@ -293,7 +337,7 @@ p {
 h1 {
     margin: 10px 0px 10px 0px;
     font-size: 28px;
-    font-family: "M plus 1p", "Helvetica", sans-serif;
+    font-family: "M plus 1p", sans-serif;
     font-weight: 300;
     color: #01678d;
     /*    border-bottom: 1px #01678d solid;*/
@@ -302,7 +346,7 @@ h1 {
 h2 {
     margin: 20px 0px 5px 0px;
     font-size: 20px;
-    font-family: "M+ 1c regular", "Helvetica", sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     font-weight: 400;
     border-bottom-width: 2px;
     border-bottom-style: solid;
@@ -313,8 +357,8 @@ h2 {
 h3 {
     margin: 20px 0px 5px 0px;
     padding: 0px 0px 0px 5px;
-    font-size: 20px;
-    font-family: "M+ 1c regular", "Helvetica", sans-serif;
+    font-size: 18px;
+    font-family: "Noto Sans JP", sans-serif;
     font-weight: 400;
     border-left-width: 5px;
     border-left-style: solid;
@@ -394,6 +438,7 @@ table.every thead th {
 /*プロフィールの設定*/
 profile {
     float: center;
+    display: -ms-grid;
     display: grid;
     margin: 5px 0px 5px 0px;
     color: #000000;
@@ -402,9 +447,11 @@ profile {
     background-color: rgba(232, 244, 247, 0.92);
     min-height: 10vh;
     border: 1px #336797 solid;
+    -ms-grid-rows: 45px 30px 30px minmax(40px,1fr);
     grid-template-rows: 45px 30px 30px minmax(40px,1fr);
+    -ms-grid-columns: 120px 200px 1fr;
     grid-template-columns: 120px 200px 1fr;
-    grid-template-areas:
+        grid-template-areas:
         "photo position name   "
         "photo faculty  faculty"
         "photo school   school "
@@ -414,11 +461,14 @@ profile {
 .photo_profile {
     width: 120px;
     height:145px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     /*coverは強制的に枠に当てはめて、containはタテヨコ比を維持する*/
 }
 
 .job {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
     grid-area: position;
     padding: 10px 0px 0px 5px;
     font-weight: 300;
@@ -428,6 +478,8 @@ profile {
 }
 
 .name {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
     grid-area: name;
     font-weight: 100;
     font-size: 30px;
@@ -438,6 +490,9 @@ profile {
 }
 
 .faculty {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
     grid-area: faculty;
     font-weight: 300;
     font-size: 16px;
@@ -445,6 +500,9 @@ profile {
 }
 
 .school {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
     grid-area: school;
     font-weight: 300;
     font-size: 16px;
@@ -453,6 +511,9 @@ profile {
 }
 
 .comment {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
     grid-area: comment;
     font-weight: 300;
     font-size: 14px;
@@ -462,6 +523,7 @@ profile {
 /*お問い合わせの設定*/
 inquiry {
     float: center;
+    display: -ms-grid;
     display: grid;
     margin: 0px;
     padding-top : 10px;
@@ -470,18 +532,28 @@ inquiry {
     /* 全体の文字色 */
     background-color: #ffffff;
     border-bottom: 1px #336797 dotted;
-    grid-template-rows: 1fr;
+    -ms-grid-rows: 1fr;
+    grid-template-rows: auto;
+    -ms-grid-columns: 180px calc(100% - 180px);
     grid-template-columns: 180px calc(100% - 180px);
-    grid-template-areas:
+        grid-template-areas:
         "midasi detail";
 }
 
 /*midashiはh1,detailはpのスタイルを継承。*/
 .midasi {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
     grid-area: midasi;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align:center;
     font-size: 28px;
     font-family: "M plus 1p", sans-serif;
@@ -491,6 +563,9 @@ inquiry {
 }
 
 .detail {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: detail;
     font-size: 14px;
     padding-left: 5px;
     font-family: "Noto Sans JP", sans-serif;
@@ -502,13 +577,14 @@ inquiry {
     background-color: rgba(255, 208, 8, 0.51);
     border : 2px #ff8800 solid;
     border-radius: 10px;
-    padding : 5px;
+    padding : 3px;
     
 }
 
 /*Q and A*/
 question {
     float: center;
+    display: -ms-grid;
     display: grid;
     margin: 7px 0px 3px 0px;
     padding-top : 0px;
@@ -517,17 +593,27 @@ question {
     /* 全体の文字色 */
     background-color: #ffffff;
     border: 2px #c60a68 solid;
+    -ms-grid-rows: 1fr;
     grid-template-rows: 1fr;
+    -ms-grid-columns: 70px calc(100% - 70px);
     grid-template-columns: 70px calc(100% - 70px);
-    grid-template-areas:
+        grid-template-areas:
         "Q ques";
 }
 /*Qはh1,quesはpのスタイルを継承。*/
 .Q {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
     grid-area: Q;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 24px;
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 600;
@@ -536,9 +622,15 @@ question {
     padding: 0px;
 }
 .ques{
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
     grid-area: ques;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 14px;
     padding: 5px;
     font-family: "Noto Sans JP", sans-serif;
@@ -548,6 +640,7 @@ question {
 
 answer {
     float: center;
+    display: -ms-grid;
     display: grid;
     margin: 3px 0px 7px 0px;
     padding : 0px;
@@ -555,17 +648,27 @@ answer {
     /* 全体の文字色 */
     background-color: #ffffff;
     border: 2px #296dd9 solid;
+    -ms-grid-rows: 1fr;
     grid-template-rows: 1fr;
+    -ms-grid-columns: calc(100% - 70px) 70px;
     grid-template-columns: calc(100% - 70px) 70px;
-    grid-template-areas:
+        grid-template-areas:
         "ans A";
 }
 /*Qはh1,quesはpのスタイルを継承。*/
 .A {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
     grid-area: A;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 24px;
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 600;
@@ -574,9 +677,15 @@ answer {
     padding: 0px;
 }
 .ans{
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
     grid-area: ans;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 14px;
     padding: 5px;
     font-family: "Noto Sans JP", sans-serif;
@@ -593,4 +702,104 @@ answer {
 }
 .ihiran a{
     font-weight: 400;
+}
+/*新歓ページ用*/
+thumbnail{
+    float: center;
+    display: inline-block;
+    margin: 8px;
+    width : calc(50% - 30px);
+    padding : 5px;
+    border : 1px #05727b solid;
+    border-radius: 5px;
+    background-color: #f9ffff;
+    /* 全体の文字色 */
+}
+thumbnail:hover{
+    border : 1px #f873e9 solid;
+    background-color: #f7ddf4;
+    text-decoration:  #0a96a2 underline;
+}
+thumbnail,
+thumbnail::before,
+thumbnail::after {
+    transition: all .3s;    
+}
+
+.thu_title{
+    display: flex;
+    font-size: 22px;
+    font-family: "M plus 1p", sans-serif;
+    font-weight: 500;
+    color: #05727b;
+    padding: 0px 0px 0px 0px;
+}
+.thu_detail{
+    font-size: 14px;
+    padding-left: 5px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    color: #777777;
+    padding: 5px 0px 0px 0px;
+}
+
+annual {
+    float: center;
+    display: -ms-grid;
+    display: grid;
+    margin: 0px;
+    padding-top : 10px;
+    padding-bottom : 10px;
+    color: #000000;
+    /* 全体の文字色 */
+    background-color: #ffffff;
+    border-bottom: 1px #336797 dotted;
+    -ms-grid-rows: 1fr;
+    grid-template-rows: auto;
+    -ms-grid-columns: 180px calc(100% - 180px);
+    grid-template-columns: 180px calc(100% - 180px);
+        grid-template-areas:
+        "annual_image annual_detail";
+}
+
+/*midashiはh1,detailはpのスタイルを継承。*/
+.annual_image {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: annual_image;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align:center;
+    font-size: 28px;
+    font-family: "M plus 1p", sans-serif;
+    font-weight: 300;
+    color: #01678d;
+    padding: 0px 0px 0px 5px;
+}
+
+.annual_detail {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: annual_detail;
+    font-size: 14px;
+    padding-left: 5px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 300;
+    color: #000000;
+    padding: 0px 0px 0px 5px;
+}
+
+.warning{
+    background-color: rgba(255, 208, 8, 0.51);
+    border : 2px #ff8800 solid;
+    border-radius: 10px;
+    padding : 5px;
+    
 }

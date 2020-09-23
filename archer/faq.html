@@ -9,9 +9,9 @@
     <!--スタイルシートの読み込み-->
     <style type="text/css"></style>
     <link rel="stylesheet" href="css/parts_mob.css" type="text/css" media="(max-width:700px)">
-    <link rel="stylesheet" href="css/layout2_mob.css" type="text/css" media="(max-width:700px)">
+    <link rel="stylesheet" href="css/layout_mob.css" type="text/css" media="(max-width:700px)">
     <link rel="stylesheet" href="css/parts.css" type="text/css" media="(min-width:701px)">
-    <link rel="stylesheet" href="css/layout2.css" type="text/css" media="(min-width:701px)">
+    <link rel="stylesheet" href="css/layout.css" type="text/css" media="(min-width:701px)">
     <!--Webフォント読み込み-->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+JP:wght@100;300;400;600&family=Roboto:wght@100;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
     <meta name="twitter:site" content="@akishin_archery">
     <meta name="twitter:title" content="東京大学運動会洋弓部">
     <meta name="twitter:description" content="東京大学運動会洋弓部の公式HPです。">
-    <meta name="twitter:image" content="img/card.png">
+    <meta name="twitter:image" content="http://www.ut-archery.jp/archer/img/card.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177519445-1"></script>
@@ -56,11 +56,25 @@
         </ul>
     </gnav>
 
+    <lnav class="stick_lnav">
+        <label for="menu_bar01">
+            <div class="hide">ページ内メニュー(タップしてください) ▼</div>
+        </label>
+        <input type="checkbox" id="menu_bar01" class="accordion" />
+        <ul id="links01">
+            <li><a href="aboutus.html">洋弓部って？</a></li>
+            <li><a href="aboutarchery.html">アーチェリーとは</a></li>
+            <li><a href="annual.html">新入部員の一年</a></li>
+            <li><a href="faq.html">Q&A</a></li>
+            <li><a href="risyuu.html">履修のすゝめ</a></li>
+        </ul>
+    </lnav>
+
     <!--タイトル-->
     <eyecatch>
-        <img src="img/browser.png" alt="" border="0" class="photo_eyecatch">
+        <img src="img/recruit.png" alt="" border="0" class="photo_eyecatch">
         <div class="pagetitle">
-            <a href="top">対応ブラウザ</a>
+            <a href="top">Q & A</a>
         </div>
     </eyecatch>
 
@@ -68,7 +82,7 @@
     <main>
         <ol class="breadcrumb">
             <li><a href="../index.html">ホーム</a></li>
-            <li>新歓ページ</li>
+            <li><a href="recruit.html">新入生へ</a></li>
             <li>Q&A</li>
         </ol>
         <h1>Q&A</h1>
