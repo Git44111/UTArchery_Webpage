@@ -833,3 +833,15 @@ backtotop{
     backtotop a:active {
         color: #ffffff;
     }
+
+@media all and (-ms-high-contrast: none) {
+    header{
+        display: none;
+    }
+    gnav a{
+        color : #486c05;
+    }
+    eyecatch {
+        display:none;
+    }
+}
