@@ -5,6 +5,9 @@
 * Browsers: last 4 version
 */
 
+/*IE限定対応については最下部に記載。その他gridなどを併記している箇所はある*/
+/*レイアウトなど変更の際はこちらの内容にも気を配ること。*/
+
 @charset "UTF-8";
 
 /*PCversionではいらないものを抹殺*/
@@ -802,4 +805,52 @@ annual {
     border-radius: 10px;
     padding : 5px;
     
+}
+
+@media all and (-ms-high-contrast: none) {
+    header{
+        display: none;
+    }
+    gnav a{
+        color : #00618d;
+    }
+    eyecatch {
+        display:none;
+        /*
+    height : 220px;
+    overflow: hidden;
+    position:relative;
+    background-color:#01678d;
+        */
+        
+    }
+
+    .photo_eyecatch {
+        display: none;
+    }
+
+    .pagetitle {
+        grid-area: eyecatch;
+        height: 190px;
+        width:calc(100% - 30px);
+        color: #ffffff;
+        margin : 0px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        position : absolute;
+        top:10px;
+        left:10px;
+        font-family: "M plus 1p",sans-serif;
+        font-weight: 500;
+        font-size : 60px;
+        border: 5px #1fb0cb solid;
+        z-index: -1;
+    }
 }
