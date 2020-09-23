@@ -50,6 +50,7 @@ header {
     background-image:url("../img/header.png");
     background-repeat: no-repeat;
     background-size:cover;
+    /*background: linear-gradient(to right, #184156, #36809C);*/
     float: center;
     font-size: 25px;
     font-family: 'M plus 1p', sans-serif;
@@ -97,7 +98,7 @@ gnav a.active{
 }
 
 gnav a:hover {
-    color: #0cc3c3;
+    color: #dbe319;
     border-bottom: 3px #f49f19 solid;
     /* ヘッダメニューの下境界線 */
 }
@@ -576,7 +577,7 @@ inquiry {
     background-color: rgba(255, 208, 8, 0.51);
     border : 2px #ff8800 solid;
     border-radius: 10px;
-    padding : 5px;
+    padding : 3px;
     
 }
 

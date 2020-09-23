@@ -198,6 +198,7 @@ download{
 
 /*gnav実験*/
 gnav {
+    grid-area:gnav;
     height : 60px;
     position : relative;
     z-index: 2;/*上二つはIE用に試しに足してみている*/

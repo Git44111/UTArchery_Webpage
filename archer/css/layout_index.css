@@ -203,38 +203,3 @@ gnav {
     border-bottom: 2px #beb607 solid;
     /* フッタの下境界線 */
 }
-
-gnav ul {
-    padding: 5px 0px 5px 0px;
-    margin: 0px 0px 0px 0px;
-    list-style-type: none;
-    z-index: 1;
-}
-
-gnav li {
-    display: inline-block;
-    /*position: relative; /* IE6用 */
-    font-size: 16px;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 400;
-    padding: 0px 7px 0px 7px;
-}
-
-gnav a {
-    color: #ffffff;
-    /* 文字色 */
-    text-decoration: none;
-    display: block;
-}
-
-gnav a.active{
-    border-bottom: 3px #ffa518 solid;
-    text-decoration: none;
-    display: block;
-}
-
-gnav a:hover {
-    color: #0cc3c3;
-    border-bottom: 3px #f49f19 solid;
-    /* ヘッダメニューの下境界線 */
-}
