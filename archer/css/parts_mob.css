@@ -27,6 +27,9 @@ lnav a:visited {color: #045867;}
 lnav a:hover {color: #b2bf0b;}
 lnav a:active {color: #045867;}
 
+.smaller{
+    font-size:95%;
+}
 
 
 /*これにより、ページ内リンクがメニューの下に来る*/
@@ -453,7 +456,7 @@ profile {
     border: 1px #336797 solid;
     -ms-grid-rows: 36px 27px 27px 40px;
     grid-template-rows: 36px 27px 27px 40px;
-    -ms-grid-columns: 105px 150px 1fr;
+    -ms-grid-columns: 107px 140px 1fr;
     grid-template-columns: 107px 140px 1fr;
         grid-template-areas:
         "photo job      name   "
@@ -463,6 +466,7 @@ profile {
 }
 
 .photo_profile {
+    grid-area:photo;
     width: 107px;/*PC版の比率に合わせている*/
     height: 130px;
     -o-object-fit: cover;

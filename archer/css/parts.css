@@ -736,6 +736,7 @@ thumbnail::after {
     font-weight: 500;
     color: #05727b;
     padding: 0px 0px 0px 0px;
+    object-fit:contain;
 }
 .thu_detail{
     font-size: 14px;
@@ -804,15 +805,90 @@ annual {
     border : 2px #ff8800 solid;
     border-radius: 10px;
     padding : 5px;
-    
 }
 
 @media all and (-ms-high-contrast: none) {
     header{
         display: none;
     }
+
     gnav a{
-        color : #486c05;
+        color : #326407;
+    }
+    
+    /*IEではスマホ版の方をつけることにする。*/
+    lnav {
+        z-index: 1;
+        height: 40px;
+        text-align: center;
+    }
+
+    lnav a {
+        text-decoration: none;
+        display: block;/*枠内全てで反応*/
+    }
+
+    label {
+        display: block;
+        margin: 0px;
+        padding: 8px 5px 5px 8px;
+        font-size: 14px;
+        color: #000000;
+        background: #e8f491;
+        cursor: pointer;
+    }
+
+    input {
+        display: none;
+    }
+
+    lnav ul {
+        margin: 0px 20px 0px 20px;
+        padding: 0;
+        background: rgba(255, 255, 255, 0.94);
+        list-style: none;
+        text-align: left;
+    }
+
+    lnav li {
+        height: 0;
+        color : #000000;
+        margin : 0px;
+        padding:0px;
+        overflow: hidden;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    lnav li.sub {
+        padding: 0px 0px 0px 8px;
+        font-size: 14px;
+    }
+
+    lnav li.subsub {
+        padding: 0px 0px 0px 15px;
+        font-size: 12px;
+    }
+
+    #menu_bar01:checked ~ #links01 li {
+        border-bottom: 1px #aaaaaa dotted;
+        height : 30px;
+        opacity: 1;
+    }
+    #menu_bar01:checked ~ #links01 li.sub {
+        border-bottom: 1px #aaaaaa dotted;
+        height : 25px;
+        opacity: 1;
+    }
+    #menu_bar01:checked ~ #links01 li.subsub {
+        border-bottom: 1px #aaaaaa dotted;
+        height : 23px;
+        opacity: 1;
+    }
+    
+    .accordion{
+        display:flex;
     }
     eyecatch {
         display:none;
