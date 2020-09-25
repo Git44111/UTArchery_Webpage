@@ -1,11 +1,8 @@
+@charset "UTF-8";
+
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
 */
-
-@charset "UTF-8";
 
 .hide_mob {
     display: none
@@ -54,7 +51,6 @@ header {
     font-size: 25px;
     font-family: 'M plus 1p', sans-serif;
 }
-
 
 /* 【パンくずリスト】 */
 ol {
@@ -458,11 +454,11 @@ profile {
     grid-template-rows: 36px 27px 27px 40px;
     -ms-grid-columns: 107px 140px 1fr;
     grid-template-columns: 107px 140px 1fr;
-        grid-template-areas:
-        "photo job      name   "
-        "photo faculty  faculty"
-        "photo school   school "
-        "photo comment  comment";
+    grid-template-areas:
+    "photo job      name   "
+    "photo faculty  faculty"
+    "photo school   school "
+    "photo comment  comment";
 }
 
 .photo_profile {
@@ -727,7 +723,6 @@ thumbnail{
 thumbnail:hover{
     border : 1px #f873e9 solid;
     background-color: #f7ddf4;
-    text-decoration:  #0a96a2 underline;
 }
 thumbnail,
 thumbnail::before,
@@ -802,6 +797,69 @@ annual {
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 300;
     color: #000000;
+    padding: 0px 0px 0px 5px;
+}
+
+/*おすすめコンテンツ*/
+recommend {
+    float: center;
+    display: -ms-grid;
+    display: grid;
+    margin: 8px 0px 8px 0px;
+    color: #000000;
+    /* 全体の文字色 */
+    font-family: 'M plus 1p', sans-serif;
+    background-color: rgba(232, 244, 247, 0.92);
+    min-height: 10vh;
+    border: 1px #336797 solid;
+    -ms-grid-rows: 40px 60px;
+    grid-template-rows: 40px 60px;
+    -ms-grid-columns: 100px 1fr;
+    grid-template-columns: 100px 1fr;
+            grid-template-areas:
+        "rec_photo rec_title"
+        "rec_photo rec_detail";
+    }
+
+recommend:hover{
+    border : 1px #51b100 solid;
+    text-decoration: none;
+    background-color: #f0f7dd;
+}
+.recom{
+    text-decoration: none;
+}
+
+.rec_photo {
+    -ms-grid-row:1;
+    -ms-grid-row-span:2;
+    -ms-grid-column:1;
+    width: 100px;
+    height:100px;
+    grid-area:rec_photo;
+       -o-object-fit: cover;
+          object-fit: cover;
+    /*coverは強制的に枠に当てはめて、containはタテヨコ比を維持する*/
+}
+
+.rec_title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: rec_title;
+    font-weight: 100;
+    font-size: 22px;
+    padding: 0px 0px 0px 5px;
+    font-weight: 300;
+    border-bottom: 2px #336797 solid;
+    color: rgb(15, 58, 96)
+}
+
+.rec_detail {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: rec_detail;
+    font-weight: 300;
+    font-size: 12px;
     padding: 0px 0px 0px 5px;
 }
 

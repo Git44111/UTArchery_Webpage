@@ -1,11 +1,8 @@
+@charset "UTF-8";
+
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
 */
-
-@charset "UTF-8";
 
 html {
     scroll-behavior: smooth;/*ページ内遷移を滑らかにする。*/
@@ -54,13 +51,13 @@ body {
 特に指定のない場合下記のものが優先されると思う。*/
 
 .stick {
-    /*    position: -webkit-sticky;*/
+    position: -webkit-sticky;
     position: sticky;
     top: 0px;
 }
 
 .stick_lnav {
-    /* position: -webkit-sticky;*/
+    /*position: -webkit-sticky;*/
     position: sticky;
     top: 40px;
 }

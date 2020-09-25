@@ -1,14 +1,11 @@
+@charset "UTF-8";
+
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
 */
 
 /*IE限定対応については最下部に記載。その他gridなどを併記している箇所はある*/
 /*レイアウトなど変更の際はこちらの内容にも気を配ること。*/
-
-@charset "UTF-8";
 
 /*PCversionではいらないものを抹殺*/
 .hide {
@@ -721,7 +718,6 @@ thumbnail{
 thumbnail:hover{
     border : 1px #f873e9 solid;
     background-color: #f7ddf4;
-    text-decoration:  #0a96a2 underline;
 }
 thumbnail,
 thumbnail::before,
@@ -807,6 +803,70 @@ annual {
     padding : 5px;
 }
 
+/*おすすめコンテンツ*/
+recommend {
+    float: center;
+    display: -ms-grid;
+    display: grid;
+    margin: 8px 0px 8px 0px;
+    color: #000000;
+    /* 全体の文字色 */
+    font-family: 'M plus 1p', sans-serif;
+    background-color: rgba(232, 244, 247, 0.92);
+    min-height: 10vh;
+    width : 700px;
+    border: 1px #336797 solid;
+    -ms-grid-rows: 50px 70px;
+    grid-template-rows: 50px 70px;
+    -ms-grid-columns: 120px 580px;
+    grid-template-columns: 120px 580px;
+            grid-template-areas:
+        "rec_photo rec_title"
+        "rec_photo rec_detail";
+    }
+
+recommend:hover{
+    border : 1px #51b100 solid;
+    text-decoration: none;
+    background-color: #f0f7dd;
+}
+.recom{
+    text-decoration: none;
+}
+
+.rec_photo {
+    -ms-grid-row:1;
+    -ms-grid-row-span:2;
+    -ms-grid-column:1;
+    width: 120px;
+    height:120px;
+    grid-area:rec_photo;
+       -o-object-fit: cover;
+          object-fit: cover;
+    /*coverは強制的に枠に当てはめて、containはタテヨコ比を維持する*/
+}
+
+.rec_title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: rec_title;
+    font-weight: 100;
+    font-size: 25px;
+    padding: 5px 0px 0px 5px;
+    font-weight: 300;
+    border-bottom: 2px #336797 solid;
+    color: rgb(15, 58, 96)
+}
+
+.rec_detail {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: rec_detail;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 0px 0px 0px 5px;
+}
+
 @media all and (-ms-high-contrast: none) {
     header{
         display: none;
@@ -815,81 +875,7 @@ annual {
     gnav a{
         color : #326407;
     }
-    
-    /*IEではスマホ版の方をつけることにする。*/
-    lnav {
-        z-index: 1;
-        height: 40px;
-        text-align: center;
-    }
 
-    lnav a {
-        text-decoration: none;
-        display: block;/*枠内全てで反応*/
-    }
-
-    label {
-        display: block;
-        margin: 0px;
-        padding: 8px 5px 5px 8px;
-        font-size: 14px;
-        color: #000000;
-        background: #e8f491;
-        cursor: pointer;
-    }
-
-    input {
-        display: none;
-    }
-
-    lnav ul {
-        margin: 0px 20px 0px 20px;
-        padding: 0;
-        background: rgba(255, 255, 255, 0.94);
-        list-style: none;
-        text-align: left;
-    }
-
-    lnav li {
-        height: 0;
-        color : #000000;
-        margin : 0px;
-        padding:0px;
-        overflow: hidden;
-        -webkit-transition: all 0.3s;
-        -o-transition: all 0.3s;
-        transition: all 0.3s;
-    }
-
-    lnav li.sub {
-        padding: 0px 0px 0px 8px;
-        font-size: 14px;
-    }
-
-    lnav li.subsub {
-        padding: 0px 0px 0px 15px;
-        font-size: 12px;
-    }
-
-    #menu_bar01:checked ~ #links01 li {
-        border-bottom: 1px #aaaaaa dotted;
-        height : 30px;
-        opacity: 1;
-    }
-    #menu_bar01:checked ~ #links01 li.sub {
-        border-bottom: 1px #aaaaaa dotted;
-        height : 25px;
-        opacity: 1;
-    }
-    #menu_bar01:checked ~ #links01 li.subsub {
-        border-bottom: 1px #aaaaaa dotted;
-        height : 23px;
-        opacity: 1;
-    }
-    
-    .accordion{
-        display:flex;
-    }
     eyecatch {
         display:none;
     }

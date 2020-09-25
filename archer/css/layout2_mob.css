@@ -1,15 +1,13 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 @charset "UTF-8";
 /* 【レスポンシブデザイン_スマートフォンバージョン】 */
 
-html{
-    scroll-behavior: smooth;/*ページ内遷移を滑らかにする。*/
+/*
+* Prefixed by https://autoprefixer.github.io
+*/
+
+html {
+    scroll-behavior: smooth;
+    /*ページ内遷移を滑らかにする。*/
 }
 
 /* 【全体の背景・テキストなど】 */
@@ -28,10 +26,10 @@ body {
     */
     min-height: 100vh;
     -ms-grid-rows: auto auto auto auto auto;
-    grid-template-rows: 35px 60px/*minmax(0.1fr,70px)*/ 150px 1fr 92px;
+    grid-template-rows: 35px minmax(0.1fr, 60px) 150px 1fr 92px;
     -ms-grid-columns: 1fr 40px;
     grid-template-columns: 1fr 40px;
-        grid-template-areas:
+    grid-template-areas:
         "header     header"
         "gnav         gnav"
         "eyecatch eyecatch"
