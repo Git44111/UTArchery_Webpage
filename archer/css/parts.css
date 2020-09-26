@@ -803,7 +803,7 @@ annual {
 }
 
 .annual_detail {
-    -ms-grid-row: 1;
+    -ms-grid-row: 2;
     -ms-grid-column: 2;
     grid-area: annual_detail;
     font-size: 14px;
