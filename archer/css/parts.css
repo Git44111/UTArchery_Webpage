@@ -868,15 +868,21 @@ recommend:hover{
 }
 
 @media all and (-ms-high-contrast: none) {
-    header{
-        display: none;
-    }
-
     gnav a{
         color : #326407;
     }
 
     eyecatch {
         display:none;
+    }
+    .stick{
+        position: fixed;
+        top:0px;
+    }
+    gnav{
+        width:100%;
+    }
+    main{
+        padding-top:40px;
     }
 }

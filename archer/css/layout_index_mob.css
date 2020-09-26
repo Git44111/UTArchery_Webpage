@@ -29,6 +29,10 @@ body {
         "footer     footer";
 }
 
+gnav{
+    width:100%;
+}
+
 main {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
