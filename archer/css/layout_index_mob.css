@@ -1,8 +1,5 @@
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
 */
 
 @charset "UTF-8";
@@ -23,170 +20,233 @@ body {
     */
     min-height: 100vh;
     -ms-grid-rows: auto auto auto;
-    grid-template-rows:60px 1fr 92px;
+    grid-template-rows: minmax(0.1fr, 60px) 1fr 92px;
     -ms-grid-columns: 100%;
     grid-template-columns: 1fr 40px;
-        grid-template-areas:
+    grid-template-areas:
         "gnav         gnav"
         "main         main"
         "footer     footer";
 }
 
+gnav{
+    width:100%;
+}
+
 main {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
     grid-area: main;
     background-color: #ffffff;
     padding: 0px;
     margin: 0px;
 }
 
-header{
-    height:60px;
+
+.img1 {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
-.img1{
-    width : 100%;
-    margin : 0px;
-    padding : 0px;
+
+.img2 {
+    display: none;
+    /*スマホ版では割愛*/
 }
-.img2{
-    display:none;/*スマホ版では割愛*/
+
+.img3 {
+    display: none;
+    /*スマホ版では割愛*/
 }
-.img3{
-    width : 100%;
-    margin : 0px;
-    padding : 0px;
-    overflow:hidden;
+
+.img4 {
+    display: none;
+    /*スマホ版では割愛*/
 }
-.img3:hover img{
-  transform: scale(1.02);
-    opacity: 0.7;
-    transition-duration: 0.5s;
+
+.sm_img3 {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
 }
-.img4{
-    width : 100%;
-    grid-area: img4;
-    margin : 0px;
-    padding : 0px;
-    overflow:hidden;
-}
-.img4:hover img{
+
+.sm_img3:hover img {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
     transform: scale(1.02);
     opacity: 0.7;
+    -webkit-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
 }
-news{
-    width : 94%;
-    height : 450px;
-    overflow:hidden;
-    float : left;
-    margin : 8px;
-    padding : 8px;
-    border-bottom : 1px #000000 solid;
+
+.sm_img4 {
+    width: 100%;
+    grid-area: img4;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.sm_img4:hover img {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+    opacity: 0.7;
+    -webkit-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+news {
+    width: 94%;
+    height: 450px;
+    overflow: hidden;
+    float: left;
+    margin: 8px;
+    padding: 8px;
+    border-bottom: 1px #000000 solid;
 }
 
 /*この要素はnewsとdownload内に存在するのでそれに合わせて幅指定。*/
-topictitle{
-    width : 100%;
-    float : left;
+topictitle {
+    width: 100%;
+    float: left;
     font-size: 20px;
     font-family: "M plus 1p", sans-serif;
     font-weight: 400;
     color: #01678d;
-    border-bottom : 1px #000000 solid;
-}
-.topic{
-    display :grid;
-    margin : 0px;
-    padding : 3px 0px;
-    width:100%;
-    grid-template-rows: 1fr;
-    grid-template-columns: 60px calc(100% - 60px);
-    grid-template-areas:"date detail";
-    border-bottom : 1px #666666 dotted;
+    border-bottom: 1px #000000 solid;
 }
 
-.date{
+.topic {
+    display: -ms-grid;
+    display: grid;
+    margin: 0px;
+    padding: 3px 0px;
+    width: 100%;
+    -ms-grid-rows: 1fr;
+    grid-template-rows: 1fr;
+    -ms-grid-columns: 60px calc(100% - 60px);
+    grid-template-columns: 60px calc(100% - 60px);
+    grid-template-areas: "date detail";
+    border-bottom: 1px #666666 dotted;
+}
+
+.date {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     grid-area: date;
-    font-family : "M plus 1p",sans-serif;
+    font-family: "M plus 1p", sans-serif;
     font-weight: 500;
-    font-size : 16px;
-    border-right : 2px #088cbe solid;
-    text-align : center;
-    color : #666666;
+    font-size: 16px;
+    border-right: 2px #088cbe solid;
+    text-align: center;
+    color: #666666;
 }
 
-.detail{
+.detail {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
     margin-left: 3px;
-/*    display:contents;
+    /*    display:contents;
     align-items: center;*/
     /*やりたいんだけどリンクの位置がバグる*/
     grid-area: detail;
-    font-family : "Noto Sans JP",sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     font-weight: 400;
-    font-size : 14px;
-    text-align:left;
+    font-size: 14px;
+    text-align: left;
 }
 
-download{
-    width : 94%;
-    height : 350px;
-    overflow:hidden;
-    float : right;
-    margin : 8px;
-    padding : 8px;
-    border-bottom : 1px #000000 solid;
-    font-family : "Noto Sans JP",sans-serif;
+download {
+    width: 94%;
+    height: 350px;
+    overflow: hidden;
+    float: right;
+    margin: 8px;
+    padding: 8px;
+    border-bottom: 1px #000000 solid;
+    font-family: "Noto Sans JP", sans-serif;
     font-weight: 300;
-    font-size : 14px;
+    font-size: 14px;
 }
 
 /*contents*/
-.conte{
-    display :grid;
-    margin : 0px;
-    padding : 6px 0px;
-    width:100%;
+.conte {
+    display: -ms-grid;
+    display: grid;
+    margin: 0px;
+    padding: 6px 0px;
+    width: 100%;
+    -ms-grid-rows: 1fr;
     grid-template-rows: 1fr;
+    -ms-grid-columns: 40% 60%;
     grid-template-columns: 40% 60%;
-    grid-template-areas:"obje capt";
-    border-bottom : 1px #666666 dotted;
+    grid-template-areas: "obje capt";
+    border-bottom: 1px #666666 dotted;
 }
+
 /*object*/
-.obje{
+.obje {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     grid-area: obje;
-    font-family : "Noto Sans JP",sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     font-weight: 400;
-    font-size : 16px;
-    border-right : 2px #088cbe solid;
-    color : #666666;
-    text-align : left;
+    font-size: 16px;
+    border-right: 2px #088cbe solid;
+    color: #666666;
+    text-align: left;
 }
 
 /*caption*/
-.capt{ 
+.capt {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
     margin-left: 3px;
-    padding-left : 3px;
+    padding-left: 3px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     grid-area: capt;
-    font-family : "Noto Sans JP",sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     font-weight: 400;
-    font-size : 14px;
-    text-align:left;
+    font-size: 14px;
+    text-align: left;
 }
 
-.imgtwitter{
-    width : 300px;
+.imgtwitter {
+    width: 300px;
     text-align: center;
-    margin : 0px;
-    padding : 0px;
-    margin : 8px 16px 8px 8px;
+    margin: 0px;
+    padding: 0px;
+    margin: 8px 16px 8px 8px;
 }
-.imgtwitter:hover img{
-  transform: scale(1.02);
+
+.imgtwitter:hover img {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
     opacity: 0.7;
+    -webkit-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
 }
