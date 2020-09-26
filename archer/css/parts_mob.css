@@ -589,7 +589,7 @@ question {
     float: center;
     display: -ms-grid;
     display: grid;
-    margin: 5px 0px 3px 0px;
+    margin: 8px 0px 3px 0px;
     padding-top : 0px;
     padding-bottom : 0px;
     color: #000000;
@@ -645,7 +645,7 @@ answer {
     float: center;
     display: -ms-grid;
     display: grid;
-    margin: 3px 0px 5px 0px;
+    margin: 3px 0px 8px 0px;
     padding : 0px;
     color: #000000;
     /* 全体の文字色 */
@@ -751,26 +751,28 @@ annual {
     float: center;
     display: -ms-grid;
     display: grid;
-    margin: 0px;
-    padding-top : 10px;
-    padding-bottom : 10px;
+    margin: 8px 0px 8px 0px;
     color: #000000;
     /* 全体の文字色 */
-    background-color: #ffffff;
-    border-bottom: 1px #336797 dotted;
-    -ms-grid-rows: 1fr;
-    grid-template-rows: auto;
-    -ms-grid-columns: 180px calc(100% - 180px);
-    grid-template-columns: 180px calc(100% - 180px);
-        grid-template-areas:
+    font-family: 'M plus 1p', sans-serif;
+    background-color: rgba(232, 244, 247, 0.92);
+    min-height: 10vh;
+    border: 1px #336797 solid;
+    -ms-grid-rows: 40px 200px;
+    grid-template-rows: 30px 1fr;
+    -ms-grid-columns: auto auto;
+    grid-template-columns: 120px 1fr;
+            grid-template-areas:
+        "annual_image annual_title"
         "annual_image annual_detail";
-}
-
-/*midashiはh1,detailはpのスタイルを継承。*/
+    }
+/*これは入れ物*/
 .annual_image {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: annual_image;
+    -ms-grid-row:1;
+    -ms-grid-row-span:2;
+    -ms-grid-column:1;
+    grid-area:annual_image;
+    display:flex;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -780,12 +782,28 @@ annual {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    text-align:center;
-    font-size: 28px;
-    font-family: "M plus 1p", sans-serif;
+
+    /*coverは強制的に枠に当てはめて、containはタテヨコ比を維持する*/
+}
+/*これは写真*/
+.annual_pic{
+    width: 120px;
+    height:120px;
+   -o-object-fit: cover;
+      object-fit: cover;
+}
+
+.annual_title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: annual_title;
+    font-weight: 100;
+    font-size: 25px;
+    padding : 0px 0px 0px 10px;
+    font-family:"M plus 1p",sans-serif;
     font-weight: 300;
+    border-bottom: 1px #336797 solid;
     color: #01678d;
-    padding: 0px 0px 0px 5px;
 }
 
 .annual_detail {
@@ -794,10 +812,10 @@ annual {
     grid-area: annual_detail;
     font-size: 14px;
     padding-left: 5px;
+    padding : 0px 0px 0px 10px;
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 300;
     color: #000000;
-    padding: 0px 0px 0px 5px;
 }
 
 /*おすすめコンテンツ*/
@@ -859,7 +877,7 @@ recommend:hover{
     -ms-grid-column: 2;
     grid-area: rec_detail;
     font-weight: 300;
-    font-size: 12px;
+    font-size: 14px;
     padding: 0px 0px 0px 5px;
 }
 
@@ -897,21 +915,19 @@ backtotop{
     }
 
 @media all and (-ms-high-contrast: none) {
-    gnav a{
-        color : #486c05;
+    header{
+        display: none;
     }
+
+    gnav a{
+        color : #326407;
+    }
+
     eyecatch {
         display:none;
     }
 
     gnav{
         width:100%;
-    }
-    main{
-        padding-top:40px;
-    }
-    .stick{
-        position: fixed;
-        top:0px;
     }
 }
