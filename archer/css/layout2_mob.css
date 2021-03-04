@@ -26,7 +26,7 @@ body {
     */
     min-height: 100vh;
     -ms-grid-rows: auto auto auto auto auto;
-    grid-template-rows: 35px minmax(0.1fr, 60px) 150px 1fr 92px;
+    grid-template-rows: 35px 0.01fr 150px 1fr 92px;
     -ms-grid-columns: 1fr 40px;
     grid-template-columns: 1fr 40px;
     grid-template-areas:

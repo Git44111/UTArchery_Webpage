@@ -27,6 +27,7 @@ body {
     min-height: 100vh;
     -ms-grid-rows: auto auto auto auto auto auto;
     grid-template-rows: 35px 60px 150px 35px 1fr 92px;
+    /*lnavが上から60pxで固定されるので、lnavが一行で収まる場合でも60pxを維持*/
     -ms-grid-columns: 100%;
     grid-template-columns: 1fr 40px;
     grid-template-areas:

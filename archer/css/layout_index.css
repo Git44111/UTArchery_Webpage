@@ -33,15 +33,18 @@ topcontents {
     margin: 0px;
     padding: 0px;
     width: 100%;
-    float: center;
     -ms-grid-rows: 18.7% 32.4% 46.3%;
     grid-template-rows: 18.8% 32.6% 46%;
+/*    grid-template-rows: 20% 30% 50%;*/
     -ms-grid-columns: 60% 40%;
     grid-template-columns: 60% 40%;
     grid-template-areas:
         "img1 img2"
         "img1 img3"
         "img4 img4";
+}
+.coverphoto{
+    object-fit:cover;
 }
 
 .img1 {
@@ -51,6 +54,7 @@ topcontents {
     width: 100%;
     grid-area: img1;
     margin: 0px;
+    padding: 0px;
     padding: 0px;
 }
 

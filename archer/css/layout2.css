@@ -17,7 +17,6 @@ html {
 /* 【全体の背景・テキストなど】 */
 body {
     max-width: 1000px;
-    padding: auto;
     display: -ms-grid;
     display: grid;
     -webkit-box-pack: center;

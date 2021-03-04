@@ -2,10 +2,23 @@
 
 /*
 * Prefixed by https://autoprefixer.github.io
+Internet Explorer 向けのは -msから始まるものです。
 */
 
-/*IE限定対応については最下部に記載。その他gridなどを併記している箇所はある*/
-/*レイアウトなど変更の際はこちらの内容にも気を配ること。*/
+
+/* 共通で利用する色はここに書く。 */
+/* -- で始めること。*/
+/* 書いた色は、var(変数)の形で利用。 */
+html{
+    --linkcolor: #045867;
+    --linkhover: #b2bf0b;
+    --theme1: #01678d;
+    --theme2: #0c7b9a;
+    --theme3: #45d4fc;
+    --light: #f6fafa;
+    --title:"M plus 1p", sans-serif;
+    --sentence:"Noto Sans JP", sans-serif;
+}
 
 /*PCversionではいらないものを抹殺*/
 .hide {
@@ -18,20 +31,30 @@
 
 
 /* 【リンクの文字色】 */
-main a:link {color: #045867;}
-main a:visited {color: #045867;}
-main a:hover {color: #b2bf0b;}
-main a:active {color: #045867;}
+main a:link,main a:visited,main a:active {
+    color: var(--linkcolor);
+}
 
-footer a:link {color: #045867;}
-footer a:visited {color: #045867;}
-footer a:hover {color: #b2bf0b;}
-footer a:active {color: #045867;}
+main a:hover {
+    color: var(--linkhover);
+}
 
-lnav a:link {color: #045867;}
-lnav a:visited {color: #045867;}
-lnav a:hover {color: #b2bf0b;}
-lnav a:active {color: #045867;}
+footer a:link,footer a:visited,footer a:active {
+    color: var(--linkcolor);
+}
+
+footer a:hover {
+    color: var(--linkhover);
+}
+
+lnav a:link,lnav a:visited,lnav a:active {
+    color: var(--linkcolor);
+}
+
+lnav a:hover {
+    color: var(--linkhover);
+}
+
 
 /*これにより、ページ内リンクがメニューの下に来る*/
 a.anchor {
@@ -41,28 +64,27 @@ a.anchor {
 }
 
 header {
-    height : 35px;
-    position : relative;
+    height: 35px;
+    position: relative;
     z-index: 1;
     text-align: center;
-    padding: auto;
-    margin: 0px 0px 0px 0px;
-    background-image:url("../img/header.png");
+    
+    margin: 0px;
+    background-image: url("../img/header.png");
     background-repeat: no-repeat;
-    background-size:cover;
-    /*background: linear-gradient(to right, #184156, #36809C);*/
-    float: center;
+    background-size: cover;
     font-size: 25px;
-    font-family: 'M plus 1p', sans-serif;
+    font-family: var(--title);
 }
 
 /* 【グローバルナビゲーション】 */
 gnav {
-    height : 35px;
-    position : relative;
-    z-index: 2;/*上二つはIE用に試しに足してみている*/
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
+    height: 35px;
+    position: relative;
+    z-index: 2;
+    /*上二つはIE用に試しに足してみている*/
+    padding: 0px;
+    margin: 0px;
     background-color: #333333;
     border-bottom: 2px #8dbe07 solid;
     /* フッタの下境界線 */
@@ -70,7 +92,7 @@ gnav {
 
 gnav ul {
     padding: 5px 0px 5px 0px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px;
     list-style-type: none;
     z-index: 1;
 }
@@ -79,19 +101,19 @@ gnav li {
     display: inline-block;
     /*position: relative; /* IE6用 */
     font-size: 16px;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--sentence);
     font-weight: 400;
     padding: 0px 7px 0px 7px;
 }
 
 gnav a {
-    color: #ffffff;
+    color: white;
     /* 文字色 */
     text-decoration: none;
     display: block;
 }
 
-gnav a.active{
+gnav a.active {
     border-bottom: 3px #ffa518 solid;
     text-decoration: none;
     display: block;
@@ -99,83 +121,80 @@ gnav a.active{
 
 gnav a:hover {
     color: #dbe319;
-    border-bottom: 3px #f49f19 solid;
+    border-bottom: 3px #ffa518 solid;
     /* ヘッダメニューの下境界線 */
 }
 
 eyecatch {
     /*height : 220px;*/
     overflow: hidden;
-    position:relative;
-/*    background-color:#01678d;*/
+    position: relative;
+    /*    background-color:var(--theme1);*/
 }
 
 .photo_eyecatch {
     width: 100%;
     height: 220px;
     -o-object-fit: cover;
-       object-fit: cover;
-    position : relative;
-/*    position : absolute;
-    top:0px;
-    left:0px;    */
+    object-fit: cover;
+    position: relative;
     z-index: -2;
 }
 
 .pagetitle {
     height: 190px;
-    width:calc(100% - 30px);
-    color: #ffffff;
-    margin : 0px;
+    width: calc(100% - 30px);
+    color: white;
+    margin: 0px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position : absolute;
-    top:10px;
-    left:10px;
-    font-family: "M plus 1p",sans-serif;
+    -ms-flex-align: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: var(--title);
     font-weight: 500;
-    font-size : 60px;
+    font-size: 60px;
     border: 5px #1fb0cb solid;
     z-index: -1;
 }
 
 eyecatch a:link {
-    color: #ffffff;
-    text-decoration:none;
+    color: white;
+    text-decoration: none;
 }
 
 eyecatch a:visited {
-    color: #ffffff;
-    text-decoration:none;
+    color: white;
+    text-decoration: none;
 }
 
 eyecatch :hover {
     color: #307e00;
-    text-decoration:none;
+    text-decoration: none;
 }
 
 eyecatch a:active {
-    color: #ffffff;
-    text-decoration:none;
+    color: white;
+    text-decoration: none;
 }
 
 /* 【ページ内ナビゲーション】 */
 lnav {
-    background-color: #ffffff;
+    background-color: white;
     grid-area: lnav;
     margin: 0px 2px 0px 2px;
     width: 177px;
 }
 
 lnav ul {
-    padding: 0px 0px 0px 0px;
+    padding: 0px;
     list-style-type: none;
 }
 
@@ -184,7 +203,7 @@ lnav ul {
 */
 lnav li {
     font-size: 18px;
-    font-family: "M plus 1p", "Helvetica", sans-serif;
+    font-family: var(--title);
     font-weight: 300;
     line-height: 2.2em;
     text-indent: 1em;
@@ -204,7 +223,7 @@ lnav li.sub {
     border-width: 0px 0px 0px 5px;
     /*親のliと指定を変えている*/
     border-left-style: solid;
-    border-left-color: #45d4fc;
+    border-left-color: var(--theme3);
 }
 
 lnav li.subsub {
@@ -213,7 +232,7 @@ lnav li.subsub {
     font-size: 12px;
     line-height: 1.6em;
     margin-bottom: 4px;
-    border-width: 0px 0px 0px 0px;
+    border-width: 0px;
 }
 
 lnav a {
@@ -223,7 +242,6 @@ lnav a {
 }
 
 lnav a:hover {
-    /*background-color : #222222;*/
     border-color: #f49f19;
     /* ヘッダメニューの下境界線 */
 }
@@ -234,12 +252,12 @@ ol {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-    background-color: #efefef;
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--light);
     width: 100%;
     height: 22px;
-    float: center;
+
 }
 
 ol.breadcrumb li::after {
@@ -252,40 +270,42 @@ ol.breadcrumb li:last-child::after {
 }
 
 main {
-    background-color: #ffffff;
+    background-color: white;
     padding: 5px 3px 0px 8px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px;
 }
 
 footer {
-    display : -ms-grid;
-    display : grid;
-    margin : 10px 0px 0px 0px;
-    padding : 5px 0px 0px 0px;
-    float: center;
+    display: -ms-grid;
+    display: grid;
+    margin: 10px;
+    padding: 5px 0px 0px 0px;
+
     /* 全体の文字色 */
     font-weight: 500;
-    background-color: #f3f8f8;
+    background-color: var(--light);
     -ms-grid-rows: 56px 20px;
     grid-template-rows: 56px 20px;
     -ms-grid-columns: 35% 30% 35%;
     grid-template-columns: 35% 30% 35%;
-        grid-template-areas:
+    grid-template-areas:
         "zone1 zone2 zone3"
         "cpright cpright cpright";
     font-size: 12px;
-    border-top : 1px #246579 solid;
+    border-top: 1px var(--linkcolor) solid;
 }
-.zone1{ 
-    -ms-grid-row: 1; 
-    -ms-grid-column: 1; 
-    padding : 0px 0px 0px 30px; 
+
+.zone1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    padding: 0px 0px 0px 30px;
     grid-area: zone1;
     text-align: left;
-    font-size:12px;
-    color: #045867;
+    font-size: 12px;
+    color: var(--linkcolor);
 }
-.zone2{
+
+.zone2 {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: zone2;
@@ -293,77 +313,78 @@ footer {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    font-size:12px;
-    color: #045867;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--linkcolor);
 }
-.zone3{
+
+.zone3 {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
-    padding : 10px 0px 0px 0px;    
+    padding: 10px;
     grid-area: zone3;
     text-align: center;
-    font-size:14px;
+    font-size: 14px;
 }
-.cpright{
+
+.cpright {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
-    padding : 0px 0px 0px 10px;    
-    font-family: "Mplus 1p" sans-serif;
-    font-weight : 400;
-    color : #ffffff;
-    background-color: #246579;
+    padding: 0px 0px 0px 10px;
+    font-family: var(--title);
+    font-weight: 400;
+    color: white;
+    background-color: var(--linkcolor);
     grid-area: cpright;
 }
 
-main li{
+main li {
     font-size: 14px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 300;
-    color: #000000;
+    color: black;
 }
 
 p {
     margin: 8px 0px 8px 0px;
     font-size: 14px;
     padding-left: 5px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 300;
-    color: #000000;
+    color: black;
 }
 
 h1 {
     margin: 10px 0px 10px 0px;
     font-size: 28px;
-    font-family: "M plus 1p", sans-serif;
+    font-family: var(--title);
     font-weight: 300;
-    color: #01678d;
-    /*    border-bottom: 1px #01678d solid;*/
+    color: var(--theme1);
 }
 
 h2 {
     margin: 20px 0px 5px 0px;
     font-size: 20px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 400;
     border-bottom-width: 2px;
     border-bottom-style: solid;
-    border-bottom-color: #0c7b9a;
-    color: #000000;
+    border-bottom-color: var(--theme2);
+    color: black;
 }
 
 h3 {
     margin: 20px 0px 5px 0px;
     padding: 0px 0px 0px 5px;
     font-size: 18px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 400;
     border-left-width: 5px;
     border-left-style: solid;
-    border-left-color: #45d4fc;
-    color: #000000;
+    border-left-color: var(--theme3);
+    color: black;
 }
 
 /*試合結果の表*/
@@ -377,9 +398,9 @@ th {
     /*width: 14%;*/
     padding: 2px 5px;
     border: solid 1px #666666;
-    color: #000000;
+    color: black;
     background-color: #ddf1fc;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 600;
     font-size: 13px;
 }
@@ -388,20 +409,21 @@ td {
     /*width: 14%;*/
     padding: 2px 5px;
     border: solid 1px #666666;
-    color: #000000;
-    background-color: #ffffff;
+    color: black;
+    background-color: white;
     text-align: center;
     vertical-align: middle;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 300;
     font-size: 13px;
 }
-.left{
+
+.left {
     text-align: left;
 }
 
-.narrow{
-    width : 80px;
+.narrow {
+    width: 80px;
 }
 
 thead {
@@ -421,13 +443,6 @@ table.total th {
     border: none;
 }
 
-th.1 {
-    width: 30%;
-}
-
-th.2 {
-    width: 40%;
-}
 
 /* 各大学結果 */
 table.every thead th {
@@ -437,21 +452,21 @@ table.every thead th {
 
 /*プロフィールの設定*/
 profile {
-    float: center;
+
     display: -ms-grid;
     display: grid;
     margin: 5px 0px 5px 0px;
-    color: #000000;
+    color: black;
     /* 全体の文字色 */
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--sentence);
     background-color: rgba(232, 244, 247, 0.92);
     min-height: 10vh;
-    border: 1px #336797 solid;
-    -ms-grid-rows: 45px 30px 30px minmax(40px,1fr);
-    grid-template-rows: 45px 30px 30px minmax(40px,1fr);
+    border: 1px var(--theme1) solid;
+    -ms-grid-rows: 45px 30px 30px minmax(40px, 1fr);
+    grid-template-rows: 45px 30px 30px minmax(40px, 1fr);
     -ms-grid-columns: 120px 200px 1fr;
     grid-template-columns: 120px 200px 1fr;
-        grid-template-areas:
+    grid-template-areas:
         "photo position name   "
         "photo faculty  faculty"
         "photo school   school "
@@ -460,9 +475,9 @@ profile {
 
 .photo_profile {
     width: 120px;
-    height:145px;
+    height: 145px;
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     /*coverは強制的に枠に当てはめて、containはタテヨコ比を維持する*/
 }
 
@@ -473,7 +488,7 @@ profile {
     padding: 10px 0px 0px 5px;
     font-weight: 300;
     font-size: 20px;
-    border-bottom: 2px #336797 solid;
+    border-bottom: 2px var(--theme1) solid;
     color: rgb(15, 58, 96)
 }
 
@@ -485,7 +500,7 @@ profile {
     font-size: 30px;
     padding: 0px 0px 0px 5px;
     font-weight: 100;
-    border-bottom: 2px #336797 solid;
+    border-bottom: 2px var(--theme1) solid;
     color: rgb(15, 58, 96)
 }
 
@@ -507,7 +522,7 @@ profile {
     font-weight: 300;
     font-size: 16px;
     padding: 0px 0px 0px 5px;
-    border-bottom : 1px #336797 dotted;
+    border-bottom: 1px var(--theme1) dotted;
 }
 
 .comment {
@@ -522,21 +537,20 @@ profile {
 
 /*お問い合わせの設定*/
 inquiry {
-    float: center;
     display: -ms-grid;
     display: grid;
     margin: 0px;
-    padding-top : 10px;
-    padding-bottom : 10px;
-    color: #000000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
     /* 全体の文字色 */
-    background-color: #ffffff;
-    border-bottom: 1px #336797 dotted;
+    background-color: white;
+    border-bottom: 1px var(--theme1) dotted;
     -ms-grid-rows: 1fr;
     grid-template-rows: auto;
     -ms-grid-columns: 180px calc(100% - 180px);
     grid-template-columns: 180px calc(100% - 180px);
-        grid-template-areas:
+    grid-template-areas:
         "midasi detail";
 }
 
@@ -549,16 +563,16 @@ inquiry {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    text-align:center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
     font-size: 28px;
-    font-family: "M plus 1p", sans-serif;
+    font-family: var(--title);
     font-weight: 300;
-    color: #01678d;
+    color: var(--theme1);
     padding: 0px 0px 0px 5px;
 }
 
@@ -568,38 +582,40 @@ inquiry {
     grid-area: detail;
     font-size: 14px;
     padding-left: 5px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 300;
-    color: #000000;
+    color: black;
     padding: 0px 0px 0px 5px;
 }
-.warning{
+
+.warning {
     background-color: rgba(255, 208, 8, 0.51);
-    border : 2px #ff8800 solid;
+    border: 2px #ff8800 solid;
     border-radius: 10px;
-    padding : 3px;
-    
+    padding: 3px;
+
 }
 
 /*Q and A*/
 question {
-    float: center;
+
     display: -ms-grid;
     display: grid;
     margin: 8px 0px 3px 0px;
-    padding-top : 0px;
-    padding-bottom : 0px;
-    color: #000000;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: black;
     /* 全体の文字色 */
-    background-color: #ffffff;
+    background-color: white;
     border: 2px #c60a68 solid;
     -ms-grid-rows: 1fr;
     grid-template-rows: 1fr;
     -ms-grid-columns: 70px calc(100% - 70px);
     grid-template-columns: 70px calc(100% - 70px);
-        grid-template-areas:
+    grid-template-areas:
         "Q ques";
 }
+
 /*Qはh1,quesはpのスタイルを継承。*/
 .Q {
     -ms-grid-row: 1;
@@ -609,19 +625,20 @@ question {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     font-size: 24px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 600;
-    color: #ffffff;
-    background-color : #d88eb3;
+    color: white;
+    background-color: #d88eb3;
     padding: 0px;
 }
-.ques{
+
+.ques {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: ques;
@@ -629,32 +646,32 @@ question {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     font-size: 14px;
     padding: 5px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 400;
-    color: #000000;
+    color: black;
 }
 
 answer {
-    float: center;
     display: -ms-grid;
     display: grid;
     margin: 3px 0px 8px 0px;
-    padding : 0px;
-    color: #000000;
+    padding: 0px;
+    color: black;
     /* 全体の文字色 */
-    background-color: #ffffff;
+    background-color: white;
     border: 2px #296dd9 solid;
     -ms-grid-rows: 1fr;
     grid-template-rows: 1fr;
     -ms-grid-columns: calc(100% - 70px) 70px;
     grid-template-columns: calc(100% - 70px) 70px;
-        grid-template-areas:
+    grid-template-areas:
         "ans A";
 }
+
 /*Qはh1,quesはpのスタイルを継承。*/
 .A {
     -ms-grid-row: 1;
@@ -664,19 +681,20 @@ answer {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     font-size: 24px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 600;
-    color: #ffffff;
-    background-color : #8ebcd8;
+    color: white;
+    background-color: #8ebcd8;
     padding: 0px;
 }
-.ans{
+
+.ans {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: ans;
@@ -684,109 +702,118 @@ answer {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     font-size: 14px;
     padding: 5px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 300;
-    color: #000000;
+    color: black;
 }
-.ichiran{
-    font-family: "Noto Sans JP", sans-serif;
+
+.ichiran {
+    font-family: var(--sentence);
     font-weight: 400;
-    color: #000000;
+    color: black;
     border: 2px #c60a68 solid;
-	border-radius: 10px;/*角丸*/
+    border-radius: 10px;
+    /*角丸*/
     padding: 8px;
 }
-.ihiran a{
+
+.ichiran a {
     font-weight: 400;
 }
+
 /*新歓ページ用*/
-thumbnail{
-    float: center;
+thumbnail {
+
     display: inline-block;
     margin: 8px;
-    width : calc(50% - 30px);
-    padding : 5px;
-    border : 1px #05727b solid;
+    width: calc(50% - 30px);
+    padding: 5px;
+    border: 1px #05727b solid;
     border-radius: 5px;
     background-color: #f9ffff;
     /* 全体の文字色 */
 }
-thumbnail:hover{
-    border : 1px #f873e9 solid;
+
+thumbnail:hover {
+    border: 1px #f873e9 solid;
     background-color: #f7ddf4;
 }
+
 thumbnail,
 thumbnail::before,
 thumbnail::after {
-    transition: all .3s;    
+    transition: all .3s;
 }
 
-.thu_title{
+.thu_title {
     display: flex;
     font-size: 22px;
-    font-family: "M plus 1p", sans-serif;
+    font-family: var(--title);
     font-weight: 500;
     color: #05727b;
-    padding: 0px 0px 0px 0px;
-    object-fit:contain;
+    padding: 0px;
+    object-fit: contain;
 }
-.thu_detail{
+
+.thu_detail {
     font-size: 14px;
     padding-left: 5px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 400;
     color: #777777;
     padding: 5px 0px 0px 0px;
 }
 
 annual {
-    float: center;
+
     display: -ms-grid;
     display: grid;
     margin: 8px 0px 8px 0px;
-    color: #000000;
+    color: black;
     /* 全体の文字色 */
-    font-family: 'M plus 1p', sans-serif;
+    font-family: var(--title);
     background-color: rgba(232, 244, 247, 0.92);
     min-height: 10vh;
-    border: 1px #336797 solid;
+    border: 1px var(--theme1) solid;
     -ms-grid-rows: 40px 200px;
     grid-template-rows: 40px 1fr;
     -ms-grid-columns: 180px 580px;
     grid-template-columns: 180px 1fr;
-            grid-template-areas:
+    grid-template-areas:
         "annual_image annual_title"
         "annual_image annual_detail";
-    }
+}
+
 /*これは入れ物*/
 .annual_image {
-    -ms-grid-row:1;
-    -ms-grid-row-span:2;
-    -ms-grid-column:1;
-    grid-area:annual_image;
-    display:flex;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: annual_image;
+    display: flex;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 
     /*coverは強制的に枠に当てはめて、containはタテヨコ比を維持する*/
 }
+
 /*これは写真*/
-.annual_pic{
+.annual_pic {
     width: 180px;
-    height:180px;
-   -o-object-fit: cover;
-      object-fit: cover;
+    height: 180px;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
 .annual_title {
@@ -795,11 +822,11 @@ annual {
     grid-area: annual_title;
     font-weight: 100;
     font-size: 25px;
-    padding : 0px 0px 0px 10px;
-    font-family:"M plus 1p",sans-serif;
+    padding: 0px 0px 0px 10px;
+    font-family: var(--title);
     font-weight: 300;
-    border-bottom: 1px #336797 solid;
-    color: #01678d;
+    border-bottom: 1px var(--theme1) solid;
+    color: var(--theme1);
 }
 
 .annual_detail {
@@ -808,59 +835,60 @@ annual {
     grid-area: annual_detail;
     font-size: 14px;
     padding-left: 5px;
-    padding : 0px 0px 0px 10px;
-    font-family: "Noto Sans JP", sans-serif;
+    padding: 0px 0px 0px 10px;
+    font-family: var(--sentence);
     font-weight: 300;
-    color: #000000;
+    color: black;
 }
 
-.warning{
+.warning {
     background-color: rgba(255, 208, 8, 0.51);
-    border : 2px #ff8800 solid;
+    border: 2px #ff8800 solid;
     border-radius: 10px;
-    padding : 5px;
+    padding: 5px;
 }
 
 /*おすすめコンテンツ*/
 recommend {
-    float: center;
+
     display: -ms-grid;
     display: grid;
     margin: 8px 0px 8px 0px;
-    color: #000000;
+    color: black;
     /* 全体の文字色 */
-    font-family: 'M plus 1p', sans-serif;
+    font-family: var(--title);
     background-color: rgba(232, 244, 247, 0.92);
     min-height: 10vh;
-    border: 1px #336797 solid;
-    max-width:700px;
+    border: 1px var(--theme1) solid;
+    max-width: 700px;
     -ms-grid-rows: 50px 70px;
     grid-template-rows: 50px 70px;
     -ms-grid-columns: 120px 580px;
     grid-template-columns: 120px 1fr;
-            grid-template-areas:
+    grid-template-areas:
         "rec_photo rec_title"
         "rec_photo rec_detail";
-    }
+}
 
-recommend:hover{
-    border : 1px #51b100 solid;
+recommend:hover {
+    border: 1px #51b100 solid;
     text-decoration: none;
     background-color: #f0f7dd;
 }
-.recom{
+
+.recom {
     text-decoration: none;
 }
 
 .rec_photo {
-    -ms-grid-row:1;
-    -ms-grid-row-span:2;
-    -ms-grid-column:1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
     width: 120px;
-    height:120px;
-    grid-area:rec_photo;
-       -o-object-fit: cover;
-          object-fit: cover;
+    height: 120px;
+    grid-area: rec_photo;
+    -o-object-fit: cover;
+    object-fit: cover;
     /*coverは強制的に枠に当てはめて、containはタテヨコ比を維持する*/
 }
 
@@ -872,7 +900,7 @@ recommend:hover{
     font-size: 25px;
     padding: 5px 0px 0px 5px;
     font-weight: 300;
-    border-bottom: 2px #336797 solid;
+    border-bottom: 2px var(--theme1) solid;
     color: rgb(15, 58, 96)
 }
 
@@ -886,19 +914,62 @@ recommend:hover{
 }
 
 @media all and (-ms-high-contrast: none) {
-    header{
+    header {
         display: none;
     }
 
-    gnav a{
-        color : #326407;
+    gnav a {
+        color: #326407;
     }
 
     eyecatch {
-        display:none;
+        display: none;
     }
 
-    gnav{
-        width:100%;
+    gnav {
+        width: 100%;
     }
+}
+
+
+/* 以下改築関連 */
+.recruit_top{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+.recruit_menu{
+    margin:8px;
+    padding:8px;
+    width:45%;
+    border:5px solid;
+    display:flex;
+    flex-wrap: nowrap;
+}
+.recruit_menu_icon{
+    width:100px;
+    display: flex;
+    vertical-align: middle;
+}
+.recruit_menu_icon img{
+    object-fit:contain;
+    max-width:100%;
+}
+.recruit_menu_text{
+    color:black;
+    padding-left:16px;
+    text-align:left;
+}
+
+.green{
+    background:rgba(140, 240, 40, 0.2);
+    border-color:rgb(140, 240, 40);  
+}
+.red{
+    background:rgba(240, 40, 140, 0.2);
+    border-color:rgb(240, 40, 140);      
+}
+.yellow{
+    background:rgba(240, 220, 40, 0.2);
+    border-color:rgb(240, 220, 40);    
 }

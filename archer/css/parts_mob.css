@@ -4,25 +4,48 @@
 * Prefixed by https://autoprefixer.github.io
 */
 
+/* 共通で利用する色はここに書く。 */
+/* -- で始めること。*/
+/* 書いた色は、var(変数)の形で利用。 */
+html{
+    --linkcolor: #045867;
+    --linkhover: #b2bf0b;
+    --theme1: #01678d;
+    --theme2: #0c7b9a;
+    --theme3: #45d4fc;
+    --light: #f6fafa;
+    --title:"M plus 1p", sans-serif;
+    --sentence:"Noto Sans JP", sans-serif;
+}
+
 .hide_mob {
     display: none
 }
 
-/* 【main,footerのリンクの文字色】 */
-main a:link {color: #045867;}
-main a:visited {color: #045867;}
-main a:hover {color: #b2bf0b;}
-main a:active {color: #045867;}
+/* 【リンクの文字色】 */
+main a:link,main a:visited,main a:active {
+    color: var(--linkcolor);
+}
 
-footer a:link {color: #045867;}
-footer a:visited {color: #045867;}
-footer a:hover {color: #b2bf0b;}
-footer a:active {color: #045867;}
+main a:hover {
+    color: var(--linkhover);
+}
 
-lnav a:link {color: #045867;}
-lnav a:visited {color: #045867;}
-lnav a:hover {color: #b2bf0b;}
-lnav a:active {color: #045867;}
+footer a:link,footer a:visited,footer a:active {
+    color: var(--linkcolor);
+}
+
+footer a:hover {
+    color: var(--linkhover);
+}
+
+lnav a:link,lnav a:visited,lnav a:active {
+    color: var(--linkcolor);
+}
+
+lnav a:hover {
+    color: var(--linkhover);
+}
 
 .smaller{
     font-size:95%;
@@ -41,15 +64,15 @@ header {
     position : relative;
     z-index: 1;
     text-align: center;
-    padding: auto;
-    margin: 0px 0px 0px 0px;
+    
+    margin: 0px;
     background-image:url("../img/header.png");
     background-repeat: no-repeat;
     background-size:cover;
     /*background: linear-gradient(to right, #184156, #36809C);*/
-    float: center;
+    
     font-size: 25px;
-    font-family: 'M plus 1p', sans-serif;
+    font-family: var(--title);
 }
 
 /* 【パンくずリスト】 */
@@ -58,12 +81,12 @@ ol {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-    background-color: #efefef;
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--light);
     width: 100%;
     height: 22px;
-    float: center;
+    
 }
 
 ol.breadcrumb li::after {
@@ -77,20 +100,20 @@ ol.breadcrumb li:last-child::after {
 
 main {
     padding: 5px;
-    background-color: #ffffff;
+    background-color: white;
     padding: 5px 3px 0px 8px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px;
 }
 
 footer {
     display : -ms-grid;
     display : grid;
-    margin : 10px 0px 0px 0px;
+    margin : 10px;
     padding : 5px 0px 0px 0px;
-    float: center;
+    
     /* 全体の文字色 */
     font-weight: 500;
-    background-color: #f3f8f8;
+    background-color: var(--light);
     -ms-grid-rows: 56px 20px;
     grid-template-rows: 56px 20px;
     -ms-grid-columns: 55% 45%;
@@ -108,7 +131,7 @@ footer {
     grid-area: zone1;
     text-align: left;
     font-size:12px;
-    color: #045867;
+    color: var(--linkcolor);
 }
 .zone2{
     -ms-grid-row: 1;
@@ -121,7 +144,7 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
     font-size:11px;
-    color: #045867;
+    color: var(--linkcolor);
 }
 /*スマホ版は上に戻るのボタンは不要*/
 .zone3{
@@ -132,9 +155,9 @@ footer {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     padding : 0px 0px 0px 10px;    
-    font-family: "Mplus 1p" sans-serif;
+    font-family: var(--title);
     font-weight : 400;
-    color : #ffffff;
+    color : white;
     background-color: #246579;
     grid-area: cpright;
 }
@@ -143,55 +166,54 @@ p {
     margin: 8px 0px 8px 0px;
     font-size: 14px;
     padding-left: 5px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 300;
-    color: #000000;
+    color: black;
 }
 
 main li{
     font-size: 14px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 300;
-    color: #000000;
+    color: black;
 }
 
 /*h0 {
     margin: 20px 0px 10px 0px;
     font-size: 20px;
     font-family: 'Manrope', sans-serif;
-    color: #000000;
+    color: black;
 }*/
 
 h1 {
     margin: 5px 0px 8px 0px;
     font-size: 24px;
-    font-family: "M plus 1p", sans-serif;
+    font-family: var(--title);
     font-weight: 300;
-    color: #01678d;
-    /*    border-bottom: 1px #01678d solid;*/
+    color: var(--theme1);
 }
 
 h2 {
     margin: 10px 0px 3px 0px;
     font-size: 17px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 400;
     border-bottom-width: 2px;
     border-bottom-style: solid;
-    border-bottom-color: #0c7b9a;
-    color: #000000;
+    border-bottom-color: var(--theme2);
+    color: black;
 }
 
 h3 {
     margin: 20px 0px 5px 0px;
     padding: 0px 0px 0px 5px;
     font-size: 15px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 400;
     border-left-width: 5px;
     border-left-style: solid;
-    border-left-color: #45d4fc;
-    color: #000000;
+    border-left-color: var(--theme3);
+    color: black;
 }
 
 /*試合結果の表*/
@@ -204,9 +226,9 @@ th {
     /*width: 14%;*/
     padding: 2px 5px;
     border: solid 1px #666666;
-    color: #000000;
+    color: black;
     background-color: #ddf1fc;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 600;
     font-size: 14px;
 }
@@ -215,11 +237,11 @@ td {
     /*width: 14%;*/
     padding: 2px 5px;
     border: solid 1px #666666;
-    color: #000000;
-    background-color: #ffffff;
+    color: black;
+    background-color: white;
     text-align: center;
     vertical-align: middle;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 300;
     font-size: 14px;
 }
@@ -248,14 +270,6 @@ table.total th {
     width : 80px;
 }
 
-th.1 {
-    width: 30%;
-}
-
-th.2 {
-    width: 40%;
-}
-
 /* 各大学結果 */
 table.every thead th {
     padding: 0px 0px;
@@ -280,7 +294,7 @@ label {
     margin: 0px;
     padding: 8px 5px 5px 8px;
     font-size: 14px;
-    color: #000000;
+    color: black;
     background: #e8f491;
     cursor: pointer;
 }
@@ -299,7 +313,7 @@ lnav ul {
 
 lnav li {
     height: 0;
-    color : #000000;
+    color : black;
     margin : 0px;
     padding:0px;
     overflow: hidden;
@@ -339,8 +353,8 @@ gnav {
     /*height : 35px;*/
     position : relative;
     z-index: 2;/*上二つはIE用に試しに足してみている*/
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    margin: 0px;
     background-color: #333333;
     border-bottom: 2px #8dbe07 solid;
     /* フッタの下境界線 */
@@ -348,7 +362,7 @@ gnav {
 
 gnav ul {
     padding: 5px 0px 5px 0px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px;
     list-style-type: none;
 }
 
@@ -356,13 +370,13 @@ gnav li {
     display: inline-block;
     /*position: relative; /* IE6用 */
     font-size: 16px;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--sentence);
     font-weight: 400;
     padding: 0px 7px 0px 7px;
 }
 
 gnav a {
-    color: #ffffff;
+    color: white;
     /* 文字色 */
     text-decoration: none;
     display: block;
@@ -397,7 +411,7 @@ eyecatch {
 .pagetitle {
     height: 130px;
     width:calc(100% - 20px);
-    color: #ffffff;
+    color: white;
     margin: 0px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -411,7 +425,7 @@ eyecatch {
     position : absolute;
     top:5px;
     left:5px;
-    font-family: "M plus 1p",sans-serif;
+    font-family: var(--title);
     font-weight: 500;
     font-size : 45px;
     border: 5px #1fb0cb solid;
@@ -419,12 +433,12 @@ eyecatch {
 }
 
 eyecatch a:link {
-    color: #ffffff;
+    color: white;
     text-decoration:none;
 }
 
 eyecatch a:visited {
-    color: #ffffff;
+    color: white;
     text-decoration:none;
 }
 
@@ -434,22 +448,22 @@ eyecatch :hover {
 }
 
 eyecatch a:active {
-    color: #ffffff;
+    color: white;
     text-decoration:none;
 }
 
 /*以下、プロフィールの設定*/
 profile {
-    float: center;
+    
     display: -ms-grid;
     display: grid;
     margin: 5px 0px 5px 0px;
-    color: #000000;
+    color: black;
     /* 全体の文字色 */
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--sentence);
     background-color: rgba(232, 244, 247, 0.92);
     /*min-height: 10vh;*/
-    border: 1px #336797 solid;
+    border: 1px var(--theme1) solid;
     -ms-grid-rows: 36px 27px 27px 40px;
     grid-template-rows: 36px 27px 27px 40px;
     -ms-grid-columns: 107px 140px 1fr;
@@ -477,7 +491,7 @@ profile {
     padding: 10px 0px 0px 5px;
     font-weight: 300;
     font-size: 15px;
-    border-bottom: 2px #336797 solid;
+    border-bottom: 2px var(--theme1) solid;
     color: rgb(15, 58, 96)
 }
 
@@ -489,7 +503,7 @@ profile {
     font-size: 18px;
     padding: 5px 0px 0px 5px;
     font-weight: 300;
-    border-bottom: 2px #336797 solid;
+    border-bottom: 2px var(--theme1) solid;
     color: rgb(15, 58, 96)
 }
 
@@ -511,7 +525,7 @@ profile {
     font-weight: 300;
     font-size: 13px;
     padding: 0px 0px 0px 5px;
-    border-bottom : 1px #336797 dotted;
+    border-bottom : 1px var(--theme1) dotted;
 }
 
 .comment {
@@ -525,14 +539,14 @@ profile {
 }
 
 inquiry {
-    float: center;
+    
     display: -ms-grid;
     display: grid;
     margin: 0px;
     padding-top : 10px;
     padding-bottom : 10px;
     /* 全体の文字色 */
-    background-color: #ffffff;
+    background-color: white;
     -ms-grid-rows: 50px auto;
     grid-template-rows: 50px 1fr;
     -ms-grid-columns: 100%;
@@ -558,10 +572,10 @@ inquiry {
         -ms-flex-align: center;
             align-items: center;
     font-size: 24px;
-    font-family: "M plus 1p", "Helvetica", sans-serif;
+    font-family: var(--title)
     font-weight: 300;
-    color: #ffffff;
-    padding: 0px 0px 0px 0px;
+    color: white;
+    padding: 0px;
     background-color: #16a7be;
 }
 
@@ -571,11 +585,11 @@ inquiry {
     grid-area: detail;
     font-size: 14px;
     padding-left: 5px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 300;
-    color: #000000;
+    color: black;
     padding: 5px 0px 0px 0px;
-    color: #000000;
+    color: black;
 }
 .warning{
     background-color: rgba(255, 208, 8, 0.51);
@@ -586,15 +600,15 @@ inquiry {
 
 /*Q and A*/
 question {
-    float: center;
+    
     display: -ms-grid;
     display: grid;
     margin: 8px 0px 3px 0px;
     padding-top : 0px;
     padding-bottom : 0px;
-    color: #000000;
+    color: black;
     /* 全体の文字色 */
-    background-color: #ffffff;
+    background-color: white;
     border: 2px #c60a68 solid;
     -ms-grid-rows: 1fr;
     grid-template-rows: 1fr;
@@ -618,9 +632,9 @@ question {
         -ms-flex-align: center;
             align-items: center;
     font-size: 21px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 600;
-    color: #ffffff;
+    color: white;
     background-color : #d88eb3;
     padding: 0px;
 }
@@ -636,20 +650,20 @@ question {
             align-items: center;
     font-size: 14px;
     padding: 5px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 400;
-    color: #000000;
+    color: black;
 }
 
 answer {
-    float: center;
+    
     display: -ms-grid;
     display: grid;
     margin: 3px 0px 8px 0px;
     padding : 0px;
-    color: #000000;
+    color: black;
     /* 全体の文字色 */
-    background-color: #ffffff;
+    background-color: white;
     border: 2px #296dd9 solid;
     -ms-grid-rows: 1fr;
     grid-template-rows: 1fr;
@@ -673,9 +687,9 @@ answer {
         -ms-flex-align: center;
             align-items: center;
     font-size: 21px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 600;
-    color: #ffffff;
+    color: white;
     background-color : #8ebcd8;
     padding: 0px;
 }
@@ -691,26 +705,26 @@ answer {
             align-items: center;
     font-size: 14px;
     padding: 5px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 300;
-    color: #000000;
+    color: black;
 }
 
 .ichiran{
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 400;
-    color: #000000;
+    color: black;
     border: 2px #c60a68 solid;
 	border-radius: 10px;/*角丸*/
     padding: 8px;
 }
-.ihiran a{
+.ichiran a{
     font-weight: 400;
 }
 
 /*新歓トップページ用*/
 thumbnail{
-    float: center;
+    
     display: inline-block;
     margin: 8px;
     width : 95%;
@@ -733,31 +747,31 @@ thumbnail::after {
 .thu_title{
     display: flex;
     font-size: 20px;
-    font-family: "M plus 1p", sans-serif;
+    font-family: var(--title);
     font-weight: 500;
     color: #05727b;
-    padding: 0px 0px 0px 0px;
+    padding: 0px;
 }
 .thu_detail{
     font-size: 13px;
     padding-left: 5px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 400;
     color: #777777;
     padding: 5px 0px 0px 0px;
 }
 
 annual {
-    float: center;
+    
     display: -ms-grid;
     display: grid;
     margin: 8px 0px 8px 0px;
-    color: #000000;
+    color: black;
     /* 全体の文字色 */
-    font-family: 'M plus 1p', sans-serif;
+    font-family: var(--title);
     background-color: rgba(232, 244, 247, 0.92);
     min-height: 10vh;
-    border: 1px #336797 solid;
+    border: 1px var(--theme1) solid;
     -ms-grid-rows: 40px 200px;
     grid-template-rows: 30px 1fr;
     -ms-grid-columns: auto auto;
@@ -800,10 +814,10 @@ annual {
     font-weight: 100;
     font-size: 25px;
     padding : 0px 0px 0px 10px;
-    font-family:"M plus 1p",sans-serif;
+    font-family:var(--title);
     font-weight: 300;
-    border-bottom: 1px #336797 solid;
-    color: #01678d;
+    border-bottom: 1px var(--theme1) solid;
+    color: var(--theme1);
 }
 
 .annual_detail {
@@ -813,23 +827,23 @@ annual {
     font-size: 14px;
     padding-left: 5px;
     padding : 0px 0px 0px 10px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: var(--sentence);
     font-weight: 300;
-    color: #000000;
+    color: black;
 }
 
 /*おすすめコンテンツ*/
 recommend {
-    float: center;
+    
     display: -ms-grid;
     display: grid;
     margin: 8px 0px 8px 0px;
-    color: #000000;
+    color: black;
     /* 全体の文字色 */
-    font-family: 'M plus 1p', sans-serif;
+    font-family: var(--title);
     background-color: rgba(232, 244, 247, 0.92);
     min-height: 10vh;
-    border: 1px #336797 solid;
+    border: 1px var(--theme1) solid;
     -ms-grid-rows: 40px 60px;
     grid-template-rows: 40px 60px;
     -ms-grid-columns: 100px 1fr;
@@ -868,7 +882,7 @@ recommend:hover{
     font-size: 22px;
     padding: 0px 0px 0px 5px;
     font-weight: 300;
-    border-bottom: 2px #336797 solid;
+    border-bottom: 2px var(--theme1) solid;
     color: rgb(15, 58, 96)
 }
 
@@ -893,17 +907,17 @@ backtotop{
     text-align: center;
     background-color: rgba(134, 214, 25, 0.55);
     border:1px rgba(134, 214, 25) solid;
-    color:#ffffff;
+    color:white;
     font-size:32px;
-    font-family: "M plus 1p",sans-serif;
+    font-family: var(--title);
     font-weight: 500;
 }
     backtotop a:link {
-        color: #ffffff;
+        color: white;
     }
 
     backtotop a:visited {
-        color: #ffffff;
+        color: white;
     }
 
     backtotop :hover {
@@ -911,7 +925,7 @@ backtotop{
     }
 
     backtotop a:active {
-        color: #ffffff;
+        color: white;
     }
 
 @media all and (-ms-high-contrast: none) {

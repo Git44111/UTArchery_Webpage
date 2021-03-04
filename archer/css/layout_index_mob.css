@@ -1,8 +1,9 @@
+@charset "UTF-8";
 /*
-* Prefixed by https://autoprefixer.github.io
+ Prefixed by https://autoprefixer.github.io
 */
 
-@charset "UTF-8";
+
 /* 【レスポンシブデザイン_スマートフォンバージョン】 */
 
 /* 【全体の背景・テキストなど】 */
@@ -20,7 +21,7 @@ body {
     */
     min-height: 100vh;
     -ms-grid-rows: auto auto auto;
-    grid-template-rows: minmax(0.1fr, 60px) 1fr 92px;
+    grid-template-rows: 0.01fr 1fr 92px;
     -ms-grid-columns: 100%;
     grid-template-columns: 1fr 40px;
     grid-template-areas:
