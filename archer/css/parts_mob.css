@@ -167,7 +167,7 @@ p {
     font-size: 14px;
     padding-left: 5px;
     font-family: var(--sentence);
-    font-weight: 300;
+    font-weight: 400;
     color: black;
 }
 
@@ -723,9 +723,8 @@ answer {
 }
 
 /*新歓トップページ用*/
-thumbnail{
-    
-    display: inline-block;
+.thumbnail{
+    text-decoration: none;
     margin: 8px;
     width : 95%;
     padding : 5px;
@@ -734,14 +733,15 @@ thumbnail{
     background-color: #f9ffff;
     /* 全体の文字色 */
 }
-thumbnail:hover{
-    border : 1px #f873e9 solid;
+.thumbnail:hover {
+    border: 1px #f873e9 solid;
     background-color: #f7ddf4;
 }
-thumbnail,
-thumbnail::before,
-thumbnail::after {
-    transition: all .3s;    
+
+.thumbnail,
+.thumbnail::before,
+.thumbnail::after {
+    transition: all .3s;
 }
 
 .thu_title{
@@ -930,17 +930,36 @@ backtotop{
 
 /*2021 Spr. for recruit*/
 .recruit_intro{
+    display:flex;
     margin:24px auto;
     width:100%;
-    display:flex;
     flex-wrap:wrap;
     align-content: center;
 }
+.recruit_intro_img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.recruit_eyecatch{
+    position:relative;
+    margin:36px auto;
+    width:100%;
+    height:500px;
+    align-content: center;
+}
 .recruit_intro_content{
-    display:flex;
-    vertical-align: middle;
-    flex-wrap:wrap;
-    padding:16px;
+    position:absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:70%;
+    top:30%;
+    left:0px;
+    background-color:rgba(211, 247, 250, 0.71);
+    z-index: 5;
 }
 
 .recruit_top {
@@ -948,43 +967,60 @@ backtotop{
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.recruit_top_font{
-    font-weight: medium;
+.recruit_eye_title {
+    font-weight:400;
+    color:black;
+    margin:0px;
+}
+.recruit_eye_font{
+    font-family:"M plus 1p", sans-serif;
+    text-align: center;
+    font-weight: 300;
     font-size:16px;
-    line-height: 32px;
+    line-height: 28px;
+    margin:8px;
+}
+.h1_recruit{
+    margin:16px auto;
+    font-weight:400;
 }
 
 .recruit_menu {
-    display: inline-block;
     margin: 8px;
     padding: 8px;
-    width: auto;
+    width: 100%;
     border: 5px solid var(--theme1);
     display: flex;
     flex-wrap: nowrap;
+    align-content: flex-start;
     text-decoration:none;
 }
 
-.recruit_menu::after{
-    transition: all .5s;
-}
-
 .recruit_menu_icon {
-    width: 100px;
-    display: flex;
+    display:flex;
+    width:30%;
+    max-width:120px;
+    flex-grow: 0;
     align-items: center;
     vertical-align: middle;
 }
 .recruit_menu_icon img{
-    height: 100px;
-    display: flex;
-    vertical-align: middle;
+    width:100%;
+    height:80px;
+    object-fit:contain;
 }
 .recruit_menu_text {
+    width:calc(100% - 136px);
+    padding: 0;
     text-decoration: none;
     color: black;
     padding-left: 16px;
     text-align: left;
+    flex-grow: 1;
+}
+
+.nopadding {
+    padding:0;
 }
 
 .green:hover {    
