@@ -939,6 +939,7 @@ recommend:hover {
 /* 以下改築関連 */
 .recruit_intro{
     display:flex;
+    align-items: flex-start;
     align-content: center;
     margin:24px auto;
     width:100%;
@@ -970,7 +971,6 @@ recommend:hover {
     top:0px;
     left:50%;
     background-color:rgba(211, 247, 250, 0.71);
-    z-index: 5;
 }
 
 .recruit_top {

@@ -931,6 +931,7 @@ backtotop{
 /*2021 Spr. for recruit*/
 .recruit_intro{
     display:flex;
+    align-items: flex-start;
     margin:24px auto;
     width:100%;
     flex-wrap:wrap;
@@ -959,7 +960,6 @@ backtotop{
     top:30%;
     left:0px;
     background-color:rgba(211, 247, 250, 0.71);
-    z-index: 5;
 }
 
 .recruit_top {
