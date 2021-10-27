@@ -8,10 +8,10 @@
     <link rel="icon" type="image/png" href="img/icon.svg">
     <!--スタイルシートの読み込み-->
     <style type="text/css"></style>
-    <link rel="stylesheet" href="css/parts_mob.css" type="text/css" media="(max-width:700px)">
-    <link rel="stylesheet" href="css/layout_mob.css" type="text/css" media="(max-width:700px)">
-    <link rel="stylesheet" href="css/parts.css" type="text/css" media="(min-width:701px)">
-    <link rel="stylesheet" href="css/layout.css" type="text/css" media="(min-width:701px)">
+   
+
+    <link rel="stylesheet" href="css/parts.css" type="text/css">
+    <link rel="stylesheet" href="css/layout.css" type="text/css">
     <!--Webフォント読み込み-->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+JP:wght@100;300;400;600&family=Roboto:wght@100;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
 <!--スマホでのみ、ページ上部に戻るボタンを出す/body外に置く-->
 <backtotop class="hide"><a href="#top">↑</a></backtotop>
 
-<body>
+<body class="withsidemenu">
     <!--ヘッダ-->
     <header class="stick"><img src="img/logo.svg" height=20px></header>
 
@@ -67,7 +67,7 @@
         <label for="menu_bar01">
             <div class="hide">ページ内メニュー(タップしてください) ▼</div>
         </label>
-        <input type="checkbox" id="menu_bar01" class="accordion" />
+        <input type="checkbox" id="menu_bar01" class="accordion hide" />
         <ul id="links01">
             <li><a href="result.html">2020年度</a></li>
             <li class="sub"><a href="#kosen">関東学連個人選手権大会</a></li>
@@ -88,7 +88,7 @@
     <main>
         <ol class="breadcrumb">
             <li><a href="../index.html">ホーム</a></li>
-            <li><a href="../result20.html"></a>試合結果(2020年度)</a></li>
+            <li><a href="../result20.html">試合結果(2020年度)</a></li>
         </ol>
         <h1>試合結果2020</h1>
         <p>2020年度はCOVID-19感染拡大のため団体試合への出場は現時点でございません。団体試合の戦績は2019年度以前を参照ください。</p>

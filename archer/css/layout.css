@@ -5,94 +5,395 @@
 */
 
 html {
-    scroll-behavior: smooth;/*ページ内遷移を滑らかにする。*/
-    /*background: #ffffff;*/
-    display: -ms-grid;
-    display: grid;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+  scroll-behavior: smooth;
+  /*ページ内遷移を滑らかにする。*/
+  display: flex;
+  justify-content: center;
 }
 
 /* 【全体の背景・テキストなど】 */
 body {
-    max-width: 1000px;
-    display: -ms-grid;
-    display: grid;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin: 0;
-    color: #000000;
-    background-color: #ffffff;
-    /* 全体の文字色 */
-    font-family: 'Noto Sans JP', sans-serif;
-    /*以下がGridの指定。*/
-    /*
-    今回はtemplate-areasに指定してあるような構成なので、四行二列。
-    そのため、各行、各列の幅を指定してあげる。
-    */
-    min-height: 100vh;
-    -ms-grid-rows: auto auto auto auto auto auto;
-    grid-template-rows: 35px 35px 220px 300px 1fr 92px;
-    -ms-grid-columns: 1000px;
-    grid-template-columns: 200px minmax(500px, 1fr);
-    grid-template-areas:
-        "header     header"
-        "gnav         gnav"
-        "eyecatch eyecatch"
-        "lnav         main"
-        ".            main"
-        "footer     footer";
+  max-width: 1000px;
+  display: grid;
+  justify-content: center;
+  margin: 0;
+  color: #000000;
+  background-color: #ffffff;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
-/*MarginとPaddingは各パーツごとに指定することにしているが、
-特に指定のない場合下記のものが優先されると思う。*/
+/*bodyのclassは全部でみっつ。サイドメニューあり/なしとindex*/
+.withsidemenu {
+  grid-template-rows: 35px 35px 220px 300px 1fr 92px;
+  grid-template-columns: 200px minmax(500px, 1fr);
+  grid-template-areas:
+    "header     header"
+    "gnav         gnav"
+    "eyecatch eyecatch"
+    "lnav         main"
+    ".            main"
+    "footer     footer";
+}
+
+@media only screen and (max-width:700px) {
+  .withsidemenu {
+    grid-template-rows: 35px 60px 150px 35px 1fr 92px;
+    /*lnavが上から60pxで固定されるので、lnavが一行で収まる場合でも60pxを維持*/
+    grid-template-columns: 1fr 40px;
+    grid-template-areas:
+      "header     header"
+      "gnav         gnav"
+      "eyecatch eyecatch"
+      "lnav         lnav"
+      "main         main"
+      "footer     footer";
+  }
+}
+
+.nosidemenu {
+  grid-template-rows: 35px 35px 220px 1fr 92px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "gnav"
+    "eyecatch"
+    "main"
+    "footer";
+}
+
+@media only screen and (max-width:700px) {
+  .nosidemenu {
+    grid-template-rows: 35px 0.01fr 150px 1fr 92px;
+    grid-template-columns: 1fr 40px;
+    grid-template-areas:
+      "header     header"
+      "gnav         gnav"
+      "eyecatch eyecatch"
+      "main         main"
+      "footer     footer";
+  }
+}
+
+.indexpage {
+  display: grid;
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  min-height: 100vh;
+  grid-template-rows: 35px 1fr 92px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "gnav"
+    "main"
+    "footer";
+}
+
+@media only screen and (max-width:700px) {
+  .indexpage {
+    min-height: 100vh;
+    grid-template-rows: 0.01fr 1fr 92px;
+    grid-template-areas:
+      "gnav"
+      "main"
+      "footer";
+  }
+}
 
 .stick {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
+  position: sticky;
+  top: 0px;
 }
 
 .stick_lnav {
-    /*position: -webkit-sticky;*/
-    position: sticky;
-    top: 40px;
+  position: sticky;
+  top: 40px;
+}
+
+@media only screen and (max-width:700px) {
+  .stick_lnav {
+    top: 60px;
+  }
 }
 
 header {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: header;
+  grid-area: header;
 }
 
 gnav {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: gnav;
+  grid-area: gnav;
 }
 
 eyecatch {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    grid-area: eyecatch;
+  grid-area: eyecatch;
 }
 
 lnav {
-    -ms-grid-row: 4;
-    -ms-grid-column: 1;
-    grid-area: lnav;
+  grid-area: lnav;
 }
 
 main {
-    -ms-grid-row: 5;
-    -ms-grid-column: 1;
-    grid-area: main;
+  grid-area: main;
 }
 
 footer {
-    -ms-grid-row: 6;
-    -ms-grid-column: 1;
-    grid-area: footer;
+  grid-area: footer;
+}
+
+/* index.html専用 */
+topcontents {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /*float: center;*/
+  grid-template-rows: 18.8% 32.6% 46%;
+  grid-template-columns: 60% 40%;
+  grid-template-areas:
+    "img1 img2"
+    "img1 img3"
+    "img4 img4";
+}
+
+@media only screen and (max-width:700px) {
+  topcontents {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /*float: center;*/
+  grid-template-rows: 1fr;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "img1"
+    "sm_img3"
+    "sm_img4";
+  }
+}
+
+.img1 {
+  grid-area: img1;
+  margin: 0px;
+  padding: 0px;
+}
+
+.img2 {
+  width: 100%;
+  grid-area: img2;
+  margin: 0px;
+  padding: 0px;
+}
+
+.img3 {
+  width: 100%;
+  grid-area: img3;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.img3:hover img {
+  transform: scale(1.02);
+  opacity: 0.7;
+  transition-duration: 0.5s;
+}
+
+.img4 {
+  width: 100%;
+  grid-area: img4;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.img4:hover img {
+  transform: scale(1.02);
+  opacity: 0.7;
+  transition-duration: 0.5s;
+}
+
+@media only screen and (max-width:700px) {
+  .img2,
+  .img3,
+  .img4 {
+    display: none;
+    /*スマホ版では割愛*/
+  }
+}
+
+.sm_img3 {
+  grid-area: sm_img3;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.sm_img3:hover img {
+  transform: scale(1.02);
+  opacity: 0.7;
+  transition-duration: 0.5s;
+}
+
+.sm_img4 {
+  width: 100%;
+  grid-area: sm_img4;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.sm_img4:hover img {
+  transform: scale(1.02);
+  opacity: 0.7;
+  transition-duration: 0.5s;
+}
+
+@media only screen and (min-width:701px) {
+
+  .sm_img3,
+  .sm_img4 {
+    display: none;
+  }
+}
+
+/*この要素はnewsとdownload内に存在するのでそれに合わせて幅指定。*/
+topictitle {
+  width: 100%;
+  float: left;
+  font-size: 24px;
+  font-family: "M plus 1p", sans-serif;
+  font-weight: 400;
+  color: #01678d;
+  border-bottom: 1px #000000 solid;
+}
+
+@media only screen and (max-width:700px) {
+  topictitle {
+    font-size: 20px;
+  }
+}
+
+.topic {
+  display: -ms-grid;
+  display: grid;
+  margin: 0px;
+  padding: 3px 0px;
+  width: 100%;
+  grid-template-rows: 1fr;
+  grid-template-columns: 60px calc(100% - 60px);
+  grid-template-areas: "date detail";
+  border-bottom: 1px #666666 dotted;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  grid-area: date;
+  font-family: "M plus 1p", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border-right: 2px #088cbe solid;
+  text-align: center;
+  color: #666666;
+}
+
+.detail {
+  margin-left: 3px;
+  grid-area: detail;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: left;
+}
+
+download {
+  width: 45%;
+  height: 350px;
+  overflow: scroll;
+  float: right;
+  margin-right: 8px;
+  padding: 8px;
+  border-bottom: 1px #000000 solid;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+news {
+  width: 45%;
+  height: 450px;
+  overflow: scroll;
+  float: left;
+  margin-left: 8px;
+  padding: 8px;
+  border-bottom: 1px #000000 solid;
+}
+
+@media only screen and (max-width:700px) {
+
+  download,
+  news {
+    width: 94%;
+    overflow: hidden;
+  }
+}
+
+/*contents*/
+.conte {
+  display: grid;
+  margin: 0px;
+  padding: 6px 0px;
+  width: 100%;
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+  -ms-grid-columns: 40% 60%;
+  grid-template-columns: 40% 60%;
+  grid-template-areas: "obje capt";
+  border-bottom: 1px #666666 dotted;
+}
+
+/*object*/
+.obje {
+  display: flex;
+  align-items: center;
+  grid-area: obje;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  border-right: 2px #088cbe solid;
+  color: #666666;
+  text-align: left;
+}
+
+/*caption*/
+.capt {
+  margin-left: 3px;
+  padding-left: 3px;
+  display: flex;
+  align-items: center;
+  grid-area: capt;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: left;
+}
+
+.imgtwitter {
+  width: 45%;
+  float: right;
+  margin: 0;
+  padding: 0;
+  margin: 8px 16px 8px 8px;
+}
+
+@media only screen and (max-width:700px) {
+  .imgtwitter {
+    width: 300px;
+    text-align: center;
+  }
+}
+
+.imgtwitter:hover img {
+  transform: scale(1.02);
+  opacity: 0.7;
+  transition-duration: 0.5s;
 }
