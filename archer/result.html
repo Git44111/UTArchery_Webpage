@@ -2,402 +2,405 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <!--ページ情報(タブ部)-->
-    <title>試合結果2020</title>
-    <link rel="icon" type="image/png" href="img/icon.svg">
-    <!--スタイルシートの読み込み-->
-    <style type="text/css"></style>
-   
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <!--ページ情報(タブ部)-->
+  <title>試合結果2020</title>
+  <link rel="icon" type="image/png" href="img/icon.svg">
+  <!--スタイルシートの読み込み-->
+  <style type="text/css"></style>
 
-    <link rel="stylesheet" href="css/parts.css" type="text/css">
-    <link rel="stylesheet" href="css/layout.css" type="text/css">
-    <!--Webフォント読み込み-->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+JP:wght@100;300;400;600&family=Roboto:wght@100;400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500&display=swap" rel="stylesheet">
-    <!--twitterカードの設定-->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@akishin_archery">
-    <meta name="twitter:title" content="東京大学運動会洋弓部">
-    <meta name="twitter:description" content="東京大学運動会洋弓部の公式HPです。">
-    <meta name="twitter:image" content="http://www.ut-archery.jp/archer/img/card.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177519445-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+  <link rel="stylesheet" href="css/parts.css" type="text/css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <!--Webフォント読み込み-->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+JP:wght@100;300;400;600&family=Roboto:wght@100;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500&display=swap" rel="stylesheet">
+  <!--twitterカードの設定-->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@akishin_archery">
+  <meta name="twitter:title" content="東京大学運動会洋弓部">
+  <meta name="twitter:description" content="東京大学運動会洋弓部の公式HPです。">
+  <meta name="twitter:image" content="http://www.ut-archery.jp/archer/img/card.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177519445-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-        gtag('config', 'UA-177519445-1');
-    </script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-177519445-1');
+
+  </script>
 </head>
 <!--スマホでのみ、ページ上部に戻るボタンを出す/body外に置く-->
 <backtotop class="hide"><a href="#top">↑</a></backtotop>
 
 <body class="withsidemenu">
-    <!--ヘッダ-->
-    <header class="stick"><img src="img/logo.svg" height=20px></header>
+  <!--ヘッダ-->
+  <header class="stick"><img src="img/logo.svg" height=20px></header>
 
-    <!--ページ間遷移メニュー-->
-    <gnav class="stick">
-        <ul>
-            <li><a href="../index.html">ホーム</a></li>
-            <li><a href="about.html">沿革</a></li>
-            <li><a href="recruit.html">新入生へ</a></li>
-            <li><a href="profile.html">部員紹介</a></li>
-            <li><a href="result.html" class="active">試合結果</a></li>
-            <li><a href="record.html">歴代記録</a></li>
-            <li><a href="inquiry.html">お問い合わせ</a></li>
-        </ul>
-    </gnav>
+  <!--ページ間遷移メニュー-->
+  <gnav class="stick">
+    <ul>
+      <li><a href="../index.html">ホーム</a></li>
+      <li><a href="about.html">沿革</a></li>
+      <li><a href="recruit.html">新入生へ</a></li>
+      <li><a href="profile.html">部員紹介</a></li>
+      <li><a href="result.html" class="active">試合結果</a></li>
+      <li><a href="record.html">歴代記録</a></li>
+      <li><a href="inquiry.html">お問い合わせ</a></li>
+    </ul>
+  </gnav>
 
-    <!--タイトル-->
-    <eyecatch>
-        <img src="img/result.png" alt="" border="0" class="photo_eyecatch">
-        <div class="pagetitle"><a href="top">試合結果</a>
-        </div>
-    </eyecatch>
+  <!--タイトル-->
+  <eyecatch>
+    <img src="img/result.png" alt="" border="0" class="photo_eyecatch">
+    <div class="pagetitle"><a href="top">試合結果</a>
+    </div>
+  </eyecatch>
 
-    <!--ページ内遷移メニュー/不要なページもある-->
-    <lnav class="stick_lnav">
-        <label for="menu_bar01">
-            <div class="hide">ページ内メニュー(タップしてください) ▼</div>
-        </label>
-        <input type="checkbox" id="menu_bar01" class="accordion hide" />
-        <ul id="links01">
-            <li><a href="result.html">2020年度</a></li>
-            <li class="sub"><a href="#kosen">関東学連個人選手権大会</a></li>
-            <li class="sub"><a href="#intarget">インカレターゲット</a></li>
-            <li class="sub"><a href="#ksafindoor">関東学連インドア大会</a></li>
-            <li class="sub"><a href="#jpindoor">全日本室内選手権</a></li>
-            <li><a href="result19.html">2019年度</a></li>
-            <li><a href="result18.html">2018年度</a></li>
-            <li><a href="result17.html">2017年度</a></li>
-            <li><a href="result16.html">2016年度</a></li>
-            <li><a href="result15.html">2015年度</a></li>
-            <li><a href="result14.html">2014年度</a></li>
-            <li><a href="result13.html">2013年度</a></li>
-        </ul>
-    </lnav>
+  <!--ページ内遷移メニュー/不要なページもある-->
+  <lnav class="stick_lnav">
+    <label for="menu_bar01">
+      <div class="hide">ページ内メニュー(タップしてください) ▼</div>
+    </label>
+    <input type="checkbox" id="menu_bar01" class="accordion hide hide_mob" />
+    <ul id="links01">
+      <li><a href="result.html">2020年度</a></li>
+      <li class="sub"><a href="#kosen">関東学連個人選手権大会</a></li>
+      <li class="sub"><a href="#intarget">インカレターゲット</a></li>
+      <li class="sub"><a href="#ksafindoor">関東学連インドア大会</a></li>
+      <li class="sub"><a href="#jpindoor">全日本室内選手権</a></li>
+      <li><a href="result19.html">2019年度</a></li>
+      <li><a href="result18.html">2018年度</a></li>
+      <li><a href="result17.html">2017年度</a></li>
+      <li><a href="result16.html">2016年度</a></li>
+      <li><a href="result15.html">2015年度</a></li>
+      <li><a href="result14.html">2014年度</a></li>
+      <li><a href="result13.html">2013年度</a></li>
+    </ul>
+  </lnav>
 
-    <!--本体-->
-    <main>
-        <ol class="breadcrumb">
-            <li><a href="../index.html">ホーム</a></li>
-            <li><a href="../result20.html">試合結果(2020年度)</a></li>
-        </ol>
-        <h1>試合結果2020</h1>
-        <p>2020年度はCOVID-19感染拡大のため団体試合への出場は現時点でございません。団体試合の戦績は2019年度以前を参照ください。</p>
-        <h2><a id="kosen" class="anchor">関東学連個人選手権大会</a></h2>
-            <h3>予選(S.H.)</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th colspan="5">男子</th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>50M</td>
-                        <td>30M</td>
-                        <td>S.H.</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>藤岡(4)</th>
-                        <td>280</td>
-                        <td>333</td>
-                        <td>613</td>
-                        <th>本選出場</th>
-                    </tr>
-                    <tr>
-                        <th>渡邊(3)</th>
-                        <td>287</td>
-                        <td>325</td>
-                        <td>612</td>
-                        <th>本選出場</th>
-                    </tr>
-                    <tr>
-                        <th>野上(4)</th>
-                        <td>270</td>
-                        <td>334</td>
-                        <td>604</td>
-                        <th>本戦出場</th>
-                    </tr>
-                    <tr>
-                        <th>津島(2)</th>
-                        <td>286</td>
-                        <td>317</td>
-                        <td>603</td>
-                        <th>本戦出場</th>
-                    </tr>
-                    <tr>
-                        <th>外山(2)</th>
-                        <td>267</td>
-                        <td>333</td>
-                        <td>600</td>
-                        <th>本戦出場(辞退)</th>
-                    </tr>
-                    <tr>
-                        <th>竹内(1)</th>
-                        <td>264</td>
-                        <td>307</td>
-                        <td>571</td>
-                        <th>本戦出場</th>
-                    </tr>
-                    <tr>
-                        <th>小石(3)</th>
-                        <td>253</td>
-                        <td>306</td>
-                        <td>559</td>
-                        <th>本戦出場</th>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="heading">
-                <h3>本選(70MW)</h3>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th colspan="5">RC男子</th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>70M</td>
-                        <td>70M</td>
-                        <td>70MW</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>野上(4)</th>
-                        <td>285</td>
-                        <td>315</td>
-                        <td>600</td>
-                        <th>インカレ出場</th>
-                    </tr>
-                    <tr>
-                        <th>津島(2)</th>
-                        <td>291</td>
-                        <td>273</td>
-                        <td>564</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>小石(3)</th>
-                        <td>273</td>
-                        <td>268</td>
-                        <td>541</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>竹内(1)</th>
-                        <td>269</td>
-                        <td>265</td>
-                        <td>534</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>渡邊(3)</th>
-                        <td>273</td>
-                        <td>247</td>
-                        <td>520</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>藤岡(4)</th>
-                        <td>243</td>
-                        <td>256</td>
-                        <td>499</td>
-                        <td></td>
-                    </tr>
-                </tbody>
-                <thead>
-                    <tr>
-                        <th colspan="5">CP男子</th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>50M</td>
-                        <td>50M</td>
-                        <td>50MW</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>雨宮(4)</th>
-                        <td>321</td>
-                        <td>317</td>
-                        <td>638</td>
-                        <th>個人2位</th>
-                    </tr>
-                </tbody>
-            </table>
-            <h2><a id="intarget" class="anchor">インカレターゲット選手権大会</a></h2>
-            <div class="heading">
-                <h3>インカレターゲット選手権(70MW)</h3>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <td>70M</td>
-                        <td>70M</td>
-                        <td>70MW</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>野上(4)</th>
-                        <td>300</td>
-                        <td>316</td>
-                        <td>616</td>
-                        <th>個人49位</th>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="heading">
-                <h3>インカレターゲット選手権・1/32イリミネーション</h3>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>野上(4)●</th>
-                        <td>飛田選手(慶応義塾大学)○</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>5 T10(22,25,24,25,27)</td>
-                        <td>6 T10*(21,26,26,25,21)</td>
-                    </tr>
-                </tbody>
-            </table>
-            <h2><a id="ksafindoor" class="anchor">関東学生アーチェリーインドア個人選手権大会</a></h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th colspan="5">RC男子</th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>18M</td>
-                        <td>18M</td>
-                        <td>18MW</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>野上(4)</th>
-                        <td>274</td>
-                        <td>274</td>
-                        <td>548</td>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>渡邊(3)</th>
-                        <td>279</td>
-                        <td>249</td>
-                        <td>528</td>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>津島(2)</th>
-                        <td>258</td>
-                        <td>265</td>
-                        <td>523</td>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>竹内(1)</th>
-                        <td>263</td>
-                        <td>254</td>
-                        <td>517</td>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>藤岡(4)</th>
-                        <td>235</td>
-                        <td>254</td>
-                        <td>489</td>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>山﨑(4)</th>
-                        <td>229</td>
-                        <td>228</td>
-                        <td>457</td>
-                        <th></th>
-                    </tr>
-                </tbody>
-                <thead>
-                    <tr>
-                        <th colspan="5">CP男子</th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>18M</td>
-                        <td>18M</td>
-                        <td>18MW</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>雨宮(4)</th>
-                        <td>281</td>
-                        <td>280</td>
-                        <td>561</td>
-                        <th>個人3位</th>
-                    </tr>
-                </tbody>
+  <!--本体-->
+  <main>
+    <ol class="breadcrumb">
+      <li><a href="../index.html">ホーム</a></li>
+      <li><a href="../result20.html">試合結果(2020年度)</a></li>
+    </ol>
+    <h1>試合結果2020</h1>
+    <p>2020年度はCOVID-19感染拡大のため団体試合への出場は現時点でございません。団体試合の戦績は2019年度以前を参照ください。</p>
+    <h2><a id="kosen" class="anchor">関東学連個人選手権大会</a></h2>
+    <h3>予選(S.H.)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="5">男子</th>
+        </tr>
+        <tr>
+          <th></th>
+          <td>50M</td>
+          <td>30M</td>
+          <td>S.H.</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>藤岡(4)</th>
+          <td>280</td>
+          <td>333</td>
+          <td>613</td>
+          <th>本選出場</th>
+        </tr>
+        <tr>
+          <th>渡邊(3)</th>
+          <td>287</td>
+          <td>325</td>
+          <td>612</td>
+          <th>本選出場</th>
+        </tr>
+        <tr>
+          <th>野上(4)</th>
+          <td>270</td>
+          <td>334</td>
+          <td>604</td>
+          <th>本戦出場</th>
+        </tr>
+        <tr>
+          <th>津島(2)</th>
+          <td>286</td>
+          <td>317</td>
+          <td>603</td>
+          <th>本戦出場</th>
+        </tr>
+        <tr>
+          <th>外山(2)</th>
+          <td>267</td>
+          <td>333</td>
+          <td>600</td>
+          <th>本戦出場(辞退)</th>
+        </tr>
+        <tr>
+          <th>竹内(1)</th>
+          <td>264</td>
+          <td>307</td>
+          <td>571</td>
+          <th>本戦出場</th>
+        </tr>
+        <tr>
+          <th>小石(3)</th>
+          <td>253</td>
+          <td>306</td>
+          <td>559</td>
+          <th>本戦出場</th>
+        </tr>
+      </tbody>
+    </table>
+    <div class="heading">
+      <h3>本選(70MW)</h3>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="5">RC男子</th>
+        </tr>
+        <tr>
+          <th></th>
+          <td>70M</td>
+          <td>70M</td>
+          <td>70MW</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>野上(4)</th>
+          <td>285</td>
+          <td>315</td>
+          <td>600</td>
+          <th>インカレ出場</th>
+        </tr>
+        <tr>
+          <th>津島(2)</th>
+          <td>291</td>
+          <td>273</td>
+          <td>564</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>小石(3)</th>
+          <td>273</td>
+          <td>268</td>
+          <td>541</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>竹内(1)</th>
+          <td>269</td>
+          <td>265</td>
+          <td>534</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>渡邊(3)</th>
+          <td>273</td>
+          <td>247</td>
+          <td>520</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>藤岡(4)</th>
+          <td>243</td>
+          <td>256</td>
+          <td>499</td>
+          <td></td>
+        </tr>
+      </tbody>
+      <thead>
+        <tr>
+          <th colspan="5">CP男子</th>
+        </tr>
+        <tr>
+          <th></th>
+          <td>50M</td>
+          <td>50M</td>
+          <td>50MW</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>雨宮(4)</th>
+          <td>321</td>
+          <td>317</td>
+          <td>638</td>
+          <th>個人2位</th>
+        </tr>
+      </tbody>
+    </table>
+    <h2><a id="intarget" class="anchor">インカレターゲット選手権大会</a></h2>
+    <div class="heading">
+      <h3>インカレターゲット選手権(70MW)</h3>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <td>70M</td>
+          <td>70M</td>
+          <td>70MW</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>野上(4)</th>
+          <td>300</td>
+          <td>316</td>
+          <td>616</td>
+          <th>個人49位</th>
+        </tr>
+      </tbody>
+    </table>
+    <div class="heading">
+      <h3>インカレターゲット選手権・1/32イリミネーション</h3>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>野上(4)●</th>
+          <td>飛田選手(慶応義塾大学)○</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>5 T10(22,25,24,25,27)</td>
+          <td>6 T10*(21,26,26,25,21)</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2><a id="ksafindoor" class="anchor">関東学生アーチェリーインドア個人選手権大会</a></h2>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="5">RC男子</th>
+        </tr>
+        <tr>
+          <th></th>
+          <td>18M</td>
+          <td>18M</td>
+          <td>18MW</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>野上(4)</th>
+          <td>274</td>
+          <td>274</td>
+          <td>548</td>
+          <th></th>
+        </tr>
+        <tr>
+          <th>渡邊(3)</th>
+          <td>279</td>
+          <td>249</td>
+          <td>528</td>
+          <th></th>
+        </tr>
+        <tr>
+          <th>津島(2)</th>
+          <td>258</td>
+          <td>265</td>
+          <td>523</td>
+          <th></th>
+        </tr>
+        <tr>
+          <th>竹内(1)</th>
+          <td>263</td>
+          <td>254</td>
+          <td>517</td>
+          <th></th>
+        </tr>
+        <tr>
+          <th>藤岡(4)</th>
+          <td>235</td>
+          <td>254</td>
+          <td>489</td>
+          <th></th>
+        </tr>
+        <tr>
+          <th>山﨑(4)</th>
+          <td>229</td>
+          <td>228</td>
+          <td>457</td>
+          <th></th>
+        </tr>
+      </tbody>
+      <thead>
+        <tr>
+          <th colspan="5">CP男子</th>
+        </tr>
+        <tr>
+          <th></th>
+          <td>18M</td>
+          <td>18M</td>
+          <td>18MW</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>雨宮(4)</th>
+          <td>281</td>
+          <td>280</td>
+          <td>561</td>
+          <th>個人3位</th>
+        </tr>
+      </tbody>
 
-            </table>
-            <h2><a id="jpindoor" class="anchor">全日本室内アーチェリー選手権大会</a></h2>
-            <div class="heading">
-                <h3>全日本室内アーチェリー選手権</h3>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <td>18M</td>
-                        <td>18M</td>
-                        <td>18MW</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>渡邊(3)</th>
-                        <td>278</td>
-                        <td>281</td>
-                        <td>559</td>
-                        <th>個人34位</th>
-                    </tr>
-                </tbody>
-            </table>
-        
-            </main>
+    </table>
+    <h2><a id="jpindoor" class="anchor">全日本室内アーチェリー選手権大会</a></h2>
+    <div class="heading">
+      <h3>全日本室内アーチェリー選手権</h3>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <td>18M</td>
+          <td>18M</td>
+          <td>18MW</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>渡邊(3)</th>
+          <td>278</td>
+          <td>281</td>
+          <td>559</td>
+          <th>個人34位</th>
+        </tr>
+      </tbody>
+    </table>
 
-    <!--フッター-->
-    <footer>
-        <div class="zone1">
-            ▶︎<a href="browser.html">対応ブラウザについて</a> <br>▶︎内部向け(パスワード要)<br>&emsp;<a href="http://www.ut-archery.jp/archer/members.cgi/index2.html">部員ページ</a> ｜ <a href="http://www.ut-archery.jp/ob/index.cgi">OB会入口</a>
-        </div>
-        <div class="zone2"><img src="img/logo_2.svg" width=100%></div>
-        <div class="zone3"><a href="#top">▲Page Top</a></div>
-        <div class="cpright">
-            ©️2020- The University of Tokyo Archery Team. All Rights Reserved.</div>
-    </footer>
-</body></html>
+  </main>
+
+  <!--フッター-->
+  <footer>
+    <div class="zone1">
+      ▶︎<a href="browser.html">対応ブラウザについて</a> <br>▶︎内部向け(パスワード要)<br>&emsp;<a href="http://www.ut-archery.jp/archer/members.cgi/index2.html">部員ページ</a> ｜ <a href="http://www.ut-archery.jp/ob/index.cgi">OB会入口</a>
+    </div>
+    <div class="zone2"><img src="img/logo_2.svg" width=100%></div>
+    <div class="zone3"><a href="#top">▲Page Top</a></div>
+    <div class="cpright">
+      ©️2020- The University of Tokyo Archery Team. All Rights Reserved.</div>
+  </footer>
+</body>
+
+</html>
