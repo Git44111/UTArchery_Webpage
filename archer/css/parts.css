@@ -59,248 +59,8 @@ a.anchor {
 
 @media only screen and (max-width:700px) {
   a.anchor {
-    display: block;
     padding-top: 70px;
     margin-top: -70px;
-  }
-}
-
-/*======全ページ共通のコンポーネント======*/
-header {
-  background-image: url("../img/header.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  margin: 0;
-}
-
-/* 【グローバルナビゲーション】 */
-gnav {
-  height: 35px;
-  position: relative;
-  z-index: 2;
-  padding: 0;
-  margin: 0;
-  background-color: #333333;
-  border-bottom: 2px var(--linkhover) solid;
-  /* 下境界線 */
-}
-@media only screen and (max-width:700px) {
-  gnav {
-    height: 60px;
-  }
-}
-
-gnav ul {
-  padding: 5px 0;
-  margin: 0px;
-  list-style-type: none;
-  z-index: 1;
-}
-
-gnav li {
-  display: inline-block;
-  font-size: 16px;
-  font-family: var(--sentence);
-  font-weight: 400;
-  padding: 0 7px;
-}
-
-gnav a {
-  color: #ffffff;
-  text-decoration: none;
-  display: block;
-}
-
-gnav a.active {
-  border-bottom: 3px #ffa518 solid;
-  text-decoration: none;
-  display: block;
-}
-
-gnav a:hover {
-  color: #dbe319;
-  border-bottom: 3px #ffa518 solid;
-}
-
-eyecatch {
-  overflow: hidden;
-  position: relative;
-}
-
-.photo_eyecatch {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  position: relative;
-  z-index: -2;
-}
-
-@media only screen and (max-width:700px) {
-  .photo_eyecatch {
-    height: 150px;
-  }
-}
-
-.pagetitle {
-  height: calc(100% - 30px);
-  width: calc(100% - 30px);
-  margin: 10px;
-  color: #ffffff;
-  margin: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-family: var(--title);
-  font-weight: 500;
-  font-size: 60px;
-  border: 5px #1fb0cb solid;
-  z-index: -1;
-}
-
-@media only screen and (max-width:700px) {
-  .pagetitle {
-    height: calc(100% - 20px);
-    width: calc(100% - 20px);
-    top: 5px;
-    left: 5px;
-    font-size: 45px;
-  }
-}
-
-eyecatch a:link,
-eyecatch a:hover,
-eyecatch a:visited,
-eyecatch a:active {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-/* 【ページ内ナビゲーション】
-ここは完全にスマホとPCで分ける。
-*/
-@media only screen and (min-width:701px) {
-  lnav {
-    background-color: #ffffff;
-    grid-area: lnav;
-    margin: 0 2px;
-    width: 180px;
-  }
-
-  lnav ul {
-    padding: 0px;
-    list-style-type: none;
-  }
-
-  lnav li {
-    font-size: 18px;
-    font-family: var(--title);
-    font-weight: 300;
-    line-height: 2.2em;
-    text-indent: 1em;
-    margin-bottom: 4px;
-    width: 100%;
-    border-bottom: 2px #08d4dd solid;
-  }
-
-  lnav li.sub {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.6em;
-    border-left: 5px var(--theme3) solid;
-    border-bottom:none;
-  }
-
-  lnav li.subsub {
-    font-weight: 400;
-    margin-left: 12px;
-    font-size: 12px;
-    line-height: 1.6em;
-    margin-bottom: 4px;
-    border-width: 0px;
-  }
-
-  lnav a {
-    text-decoration: none;
-    display: block;
-  }
-
-  lnav a:hover {
-    border-color: #f49f19;
-  }
-}
-
-@media only screen and (max-width:700px) {
-  lnav {
-    z-index: 1;
-    height: 40px;
-    text-align: center;
-  }
-
-  lnav a {
-    text-decoration: none;
-    display: block;
-    /*枠内全てで反応*/
-  }
-
-  lnav ul {
-    margin: 0px 20px 0px 20px;
-    padding: 0;
-    background: rgba(255, 255, 255, 0.94);
-    list-style: none;
-    text-align: left;
-  }
-
-  lnav li {
-    height:0;
-    color: #000000;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    transition: all 0.3s;
-  }
-
-  lnav li.sub {
-    padding-left:8px;
-    font-size: 14px;
-  }
-
-  lnav li.subsub {
-    padding-left:15px;
-    font-size: 12px;
-  }
-
-  #menu_bar01:checked ~ #links01 li {
-    border-bottom: 1px #aaaaaa dotted;
-    height: 30px;
-    opacity: 1;
-  }
-
-  #menu_bar01:checked ~ #links01 li.sub {
-    height: 25px;
-  }
-
-  #menu_bar01:checked ~ #links01 li.subsub {
-    height: 23px;
-  }
-
-  label {
-    display: block;
-    margin: 0px;
-    padding: 8px;
-    font-size: 14px;
-    color: #000000;
-    background: #e8f491;
-    cursor: pointer;
   }
 }
 
@@ -342,14 +102,7 @@ main {
 main li {
   font-size: 14px;
   font-family: var(--sentence);
-  font-weight: 300;
   color: #000000;
-}
-
-@media only screen and (max-width:700px) {
-  main li {
-    font-weight: 400;
-  }
 }
 
 footer {
@@ -357,7 +110,7 @@ footer {
   position: relative;
   z-index: 5;
   margin-top: 10px;
-  padding: 5px 0px 0px 0px;
+  padding-right: 5px;
   font-weight: 500;
   background-color: var(--light);
   grid-template-rows: 56px 20px;
@@ -433,7 +186,7 @@ p {
 
 @media only screen and (max-width:700px) {
   p {
-    font-weight: 400;
+    font-weight: 300;
   }
 }
 
@@ -457,9 +210,7 @@ h2 {
   font-size: 20px;
   font-family: var(--sentence);
   font-weight: 400;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: var(--theme2);
+  border-bottom: 2px solid var(--theme2);
   color: #000000;
 }
 
@@ -471,13 +222,11 @@ h2 {
 
 h3 {
   margin: 20px 0px 5px 0px;
-  padding: 0px 0px 0px 5px;
+  padding-left: 5px;
   font-size: 18px;
   font-family: var(--sentence);
   font-weight: 400;
-  border-left-width: 5px;
-  border-left-style: solid;
-  border-left-color: var(--theme3);
+  border-left: 5px solid var(--theme3);
   color: #000000;
 }
 
@@ -546,7 +295,6 @@ table.total th {
   border: none;
 }
 
-
 /* 各大学結果 */
 table.every thead th {
   padding: 0px 0px;
@@ -573,6 +321,10 @@ profile {
 }
 
 .photo_profile {
+  grid-area: photo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 120px;
   height: 145px;
   object-fit: cover;
@@ -673,6 +425,9 @@ inquiry {
 
   .photo_profile {
     grid-area: photo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 107px;
     /*PC版の比率に合わせてい･･･ない*/
     height: 114px;

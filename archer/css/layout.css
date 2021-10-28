@@ -9,11 +9,22 @@ html {
   /*ページ内遷移を滑らかにする。*/
   display: flex;
   justify-content: center;
+  /* 共通で利用する色・フォントはここに書く。 */
+  /* -- で始めること。*/
+  /* 書いた色は、var(変数)の形で利用。 */
+  --linkcolor: #045867;
+  --linkhover: #8dbe07;
+  --theme1: #01678d;
+  --theme2: #0c7b9a;
+  --theme3: #45d4fc;
+  --light: #f6fafa;
+  --title: "M plus 1p", sans-serif;
+  --sentence: "Noto Sans JP", sans-serif;
 }
 
 /* 【全体の背景・テキストなど】 */
 body {
-  max-width: 1000px;
+  max-width: 1200px;
   display: grid;
   justify-content: center;
   margin: 0;
@@ -63,22 +74,13 @@ body {
 
 @media only screen and (max-width:700px) {
   .nosidemenu {
-    grid-template-rows: 35px 0.01fr 150px 1fr 92px;
-    grid-template-columns: 1fr 40px;
-    grid-template-areas:
-      "header     header"
-      "gnav         gnav"
-      "eyecatch eyecatch"
-      "main         main"
-      "footer     footer";
+    grid-template-rows: 35px 60px 150px 1fr 92px;
   }
 }
 
 .indexpage {
   display: grid;
   margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
-  min-height: 100vh;
   grid-template-rows: 35px 1fr 92px;
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -89,12 +91,7 @@ body {
 
 @media only screen and (max-width:700px) {
   .indexpage {
-    min-height: 100vh;
-    grid-template-rows: 0.01fr 1fr 92px;
-    grid-template-areas:
-      "gnav"
-      "main"
-      "footer";
+    grid-template-rows: 60px 1fr 92px;
   }
 }
 
@@ -114,28 +111,395 @@ body {
   }
 }
 
-header {
-  grid-area: header;
+/*======文字のサイズ関連======*/
+p {
+  margin: 8px 0;
+  font-size: 14px;
+  padding-left: 5px;
+  font-family: var(--sentence);
+  font-weight: 300;
+  color: #000000;
 }
 
+h1 {
+  margin: 10px 0;
+  font-size: 28px;
+  font-family: var(--title);
+  font-weight: 300;
+  color: var(--theme1);
+}
+
+@media only screen and (max-width:700px) {
+  h1 {
+    margin: 5px 0;
+    font-size: 24px;
+  }
+}
+
+h2 {
+  margin: 20px 0px 5px 0px;
+  font-size: 20px;
+  font-family: var(--sentence);
+  font-weight: 400;
+  border-bottom: 2px solid var(--theme2);
+  color: #000000;
+}
+
+@media only screen and (max-width:700px) {
+  h2 {
+    font-size: 17px;
+  }
+}
+
+h3 {
+  margin: 20px 0px 5px 0px;
+  padding-left: 5px;
+  font-size: 18px;
+  font-family: var(--sentence);
+  font-weight: 400;
+  border-left: 5px solid var(--theme3);
+  color: #000000;
+}
+
+@media only screen and (max-width:700px) {
+  h3 {
+    margin: 15px 0px 3px 0px;
+    font-size: 15px;
+  }
+}
+/*======全ページ共通のコンポーネント======*/
+header {
+  grid-area: header;
+  background-image: url("../img/header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+/*  background: linear-gradient(0.25turn, rgb(25,64,84), rgb(28,68,122),rgb(45,107,144),rgb( 55,127,156));*/
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 0;
+}
+
+/* 【グローバルナビゲーション】 */
 gnav {
   grid-area: gnav;
+  height: 35px;
+  position: relative;
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+  background-color: #333333;
+  border-bottom: 2px var(--linkhover) solid;
+  /* 下境界線 */
+}
+@media only screen and (max-width:700px) {
+  gnav {
+    height: 60px;
+  }
+}
+
+gnav ul {
+  padding: 5px 0;
+  margin: 0px;
+  list-style-type: none;
+  z-index: 1;
+}
+
+gnav li {
+  display: inline-block;
+  font-size: 16px;
+  font-family: var(--sentence);
+  font-weight: 400;
+  padding: 0 7px;
+}
+
+gnav a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+}
+
+gnav a.active {
+  border-bottom: 3px #ffa518 solid;
+  text-decoration: none;
+  display: block;
+}
+
+gnav a:hover {
+  color: #dbe319;
+  border-bottom: 3px #ffa518 solid;
 }
 
 eyecatch {
   grid-area: eyecatch;
+  overflow: hidden;
+  position: relative;
+}
+eyecatch a:link,
+eyecatch a:hover,
+eyecatch a:visited,
+eyecatch a:active {
+  color: #ffffff;
+  text-decoration: none;
 }
 
-lnav {
-  grid-area: lnav;
+.photo_eyecatch {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  position: relative;
+  z-index: -2;
+}
+@media only screen and (max-width:700px) {
+  .photo_eyecatch {
+    height: 150px;
+  }
+}
+
+.pagetitle {
+  height: calc(100% - 30px);
+  width: calc(100% - 30px);
+  color: #ffffff;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: var(--title);
+  font-weight: 500;
+  font-size: 60px;
+  border: 5px #1fb0cb solid;
+  z-index: -1;
+}
+
+@media only screen and (max-width:700px) {
+  .pagetitle {
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    top: 5px;
+    left: 5px;
+    font-size: 45px;
+  }
+}
+
+/* 【ページ内ナビゲーション】
+ここは完全にスマホとPCで分ける。
+*/
+@media only screen and (min-width:701px) {
+  lnav {
+    grid-area:lnav;
+    background-color: #ffffff;
+    grid-area: lnav;
+    margin: 0 2px;
+    width: 180px;
+  }
+
+  lnav ul {
+    padding: 0px;
+    list-style-type: none;
+  }
+
+  lnav li {
+    font-size: 18px;
+    font-family: var(--title);
+    font-weight: 300;
+    line-height: 2.2em;
+    text-indent: 1em;
+    margin-bottom: 4px;
+    width: 100%;
+    border-bottom: 2px #08d4dd solid;
+  }
+  
+  lnav li:hover {
+    border-bottom-color: #f49f19;
+  }
+
+  lnav li.sub {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6em;
+    border-left: 5px var(--theme3) solid;
+    border-bottom:none;
+  }
+
+  lnav li.subsub {
+    font-weight: 400;
+    margin-left: 12px;
+    font-size: 12px;
+    line-height: 1.6em;
+    margin-bottom: 4px;
+    border-width: 0px;
+  }
+
+  lnav a {
+    text-decoration: none;
+    display: block;
+  }
+}
+
+@media only screen and (max-width:700px) {
+  lnav {
+    grid-area:lnav;
+    z-index: 1;
+    height: 40px;
+    text-align: center;
+  }
+
+  lnav a {
+    text-decoration: none;
+    display: block;
+    /*枠内全てで反応*/
+  }
+
+  lnav ul {
+    margin: 0px 20px 0px 20px;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.94);
+    list-style: none;
+    text-align: left;
+  }
+
+  lnav li {
+    height:0;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  lnav li.sub {
+    padding-left:8px;
+    font-size: 14px;
+  }
+
+  lnav li.subsub {
+    padding-left:15px;
+    font-size: 12px;
+  }
+
+  #menu_bar01:checked ~ #links01 li {
+    border-bottom: 1px #aaaaaa dotted;
+    height: 30px;
+    opacity: 1;
+  }
+
+  #menu_bar01:checked ~ #links01 li.sub {
+    height: 25px;
+  }
+
+  #menu_bar01:checked ~ #links01 li.subsub {
+    height: 23px;
+  }
+
+  label {
+    display: block;
+    margin: 0px;
+    padding: 8px;
+    font-size: 14px;
+    color: #000000;
+    background: #e8f491;
+    cursor: pointer;
+  }
 }
 
 main {
   grid-area: main;
+  padding: 5px;
+  background-color: #ffffff;
+  padding: 3px;
+  margin: 0px;
+  font-family: var(--sentence);
+  font-weight: 300;
+  color: #000000;
+}
+@media only screen and (max-width:700px) {
+  main {
+    font-weight: 400;
+  }
+}
+
+main li {
+  font-size: 14px;
+  font-family: var(--sentence);
+  color: #000000;
 }
 
 footer {
   grid-area: footer;
+  display: grid;
+  position: relative;
+  z-index: 5;
+  margin-top: 10px;
+  padding-right: 5px;
+  font-weight: 500;
+  background-color: var(--light);
+  grid-template-rows: 56px 20px;
+  grid-template-columns: 35% 30% 35%;
+  grid-template-areas:
+    "zone1 zone2 zone3"
+    "cpright cpright cpright";
+  font-size: 12px;
+  border-top: 1px var(--linkcolor) solid;
+}
+
+@media only screen and (max-width:700px) {
+  footer {
+    grid-template-columns: 55% 45%;
+    grid-template-areas:
+      "zone1 zone2"
+      "cpright cpright";
+  }
+}
+
+.zone1 {
+  padding-left: 30px;
+  grid-area: zone1;
+  text-align: left;
+  font-size: 12px;
+  color: var(--linkcolor);
+}
+
+@media only screen and (max-width:700px) {
+  .zone1 {
+    padding: 0px 0px 0px 10px;
+  }
+}
+
+.zone2 {
+  grid-area: zone2;
+  display: flex;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--linkcolor);
+}
+
+.zone3 {
+  padding: 10px;
+  grid-area: zone3;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media only screen and (max-width:700px) {
+  .zone3 {
+    display: none;
+  }
+}
+
+.cpright {
+  padding-left:10px;
+  font-family: var(--title);
+  font-weight: 400;
+  color: #ffffff;
+  background-color: var(--linkcolor);
+  grid-area: cpright;
 }
 
 /* index.html専用 */
@@ -144,7 +508,6 @@ topcontents {
   margin: 0;
   padding: 0;
   width: 100%;
-  /*float: center;*/
   grid-template-rows: 18.8% 32.6% 46%;
   grid-template-columns: 60% 40%;
   grid-template-areas:
@@ -155,11 +518,6 @@ topcontents {
 
 @media only screen and (max-width:700px) {
   topcontents {
-  display: grid;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  /*float: center;*/
   grid-template-rows: 1fr;
   grid-template-columns: 100%;
   grid-template-areas:
@@ -190,24 +548,12 @@ topcontents {
   overflow: hidden;
 }
 
-.img3:hover img {
-  transform: scale(1.02);
-  opacity: 0.7;
-  transition-duration: 0.5s;
-}
-
 .img4 {
   width: 100%;
   grid-area: img4;
   margin: 0px;
   padding: 0px;
   overflow: hidden;
-}
-
-.img4:hover img {
-  transform: scale(1.02);
-  opacity: 0.7;
-  transition-duration: 0.5s;
 }
 
 @media only screen and (max-width:700px) {
@@ -227,12 +573,6 @@ topcontents {
   overflow: hidden;
 }
 
-.sm_img3:hover img {
-  transform: scale(1.02);
-  opacity: 0.7;
-  transition-duration: 0.5s;
-}
-
 .sm_img4 {
   width: 100%;
   grid-area: sm_img4;
@@ -241,7 +581,8 @@ topcontents {
   overflow: hidden;
 }
 
-.sm_img4:hover img {
+/* マウスオンで拡大するclass */
+.img_expand:hover img {
   transform: scale(1.02);
   opacity: 0.7;
   transition-duration: 0.5s;
