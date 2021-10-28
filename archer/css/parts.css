@@ -91,7 +91,6 @@ gnav {
   border-bottom: 2px var(--linkhover) solid;
   /* 下境界線 */
 }
-
 @media only screen and (max-width:700px) {
   gnav {
     height: 60px;
@@ -170,7 +169,7 @@ eyecatch {
 
 @media only screen and (max-width:700px) {
   .pagetitle {
-    height: 130px;
+    height: calc(100% - 20px);
     width: calc(100% - 20px);
     top: 5px;
     left: 5px;
@@ -193,8 +192,8 @@ eyecatch a:active {
   lnav {
     background-color: #ffffff;
     grid-area: lnav;
-    margin: 0px 2px 0px 2px;
-    width: 177px;
+    margin: 0 2px;
+    width: 180px;
   }
 
   lnav ul {
@@ -210,21 +209,15 @@ eyecatch a:active {
     text-indent: 1em;
     margin-bottom: 4px;
     width: 100%;
-    border-width: 0px 0px 2px 0px;
-    border-style: solid;
-    border-color: #08d4dd;
+    border-bottom: 2px #08d4dd solid;
   }
 
   lnav li.sub {
     font-size: 14px;
     font-weight: 400;
-    margin-left: 0px;
-    padding-left: 0px;
     line-height: 1.6em;
-    border-width: 0px 0px 0px 5px;
-    /*親のliと指定を変えている*/
-    border-left-style: solid;
-    border-left-color: var(--theme3);
+    border-left: 5px var(--theme3) solid;
+    border-bottom:none;
   }
 
   lnav li.subsub {
@@ -237,14 +230,12 @@ eyecatch a:active {
   }
 
   lnav a {
-    color: #ffffff;
     text-decoration: none;
     display: block;
   }
 
   lnav a:hover {
     border-color: #f49f19;
-    /* ヘッダメニューの下境界線 */
   }
 }
 
@@ -270,21 +261,21 @@ eyecatch a:active {
   }
 
   lnav li {
-    height: 0;
+    height:0;
     color: #000000;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
     transition: all 0.3s;
   }
 
   lnav li.sub {
-    padding: 0px 0px 0px 8px;
+    padding-left:8px;
     font-size: 14px;
   }
 
   lnav li.subsub {
-    padding: 0px 0px 0px 15px;
+    padding-left:15px;
     font-size: 12px;
   }
 
@@ -295,21 +286,17 @@ eyecatch a:active {
   }
 
   #menu_bar01:checked ~ #links01 li.sub {
-    border-bottom: 1px #aaaaaa dotted;
     height: 25px;
-    opacity: 1;
   }
 
   #menu_bar01:checked ~ #links01 li.subsub {
-    border-bottom: 1px #aaaaaa dotted;
     height: 23px;
-    opacity: 1;
   }
 
   label {
     display: block;
     margin: 0px;
-    padding: 8px 5px 5px 8px;
+    padding: 8px;
     font-size: 14px;
     color: #000000;
     background: #e8f491;
@@ -340,13 +327,12 @@ ol.breadcrumb li:last-child::after {
 main {
   padding: 5px;
   background-color: #ffffff;
-  padding: 5px 3px 0px 5px;
+  padding: 3px;
   margin: 0px;
   font-family: var(--sentence);
   font-weight: 300;
   color: #000000;
 }
-
 @media only screen and (max-width:700px) {
   main {
     font-weight: 400;
@@ -368,7 +354,9 @@ main li {
 
 footer {
   display: grid;
-  margin: 10px;
+  position: relative;
+  z-index: 5;
+  margin-top: 10px;
   padding: 5px 0px 0px 0px;
   font-weight: 500;
   background-color: var(--light);
@@ -383,8 +371,6 @@ footer {
 
 @media only screen and (max-width:700px) {
   footer {
-    display: grid;
-    grid-template-rows: 56px 20px;
     grid-template-columns: 55% 45%;
     grid-template-areas:
       "zone1 zone2"
@@ -393,7 +379,7 @@ footer {
 }
 
 .zone1 {
-  padding: 0px 0px 0px 30px;
+  padding-left: 30px;
   grid-area: zone1;
   text-align: left;
   font-size: 12px;
@@ -428,7 +414,7 @@ footer {
 }
 
 .cpright {
-  padding: 0px 0px 0px 10px;
+  padding-left:10px;
   font-family: var(--title);
   font-weight: 400;
   color: #ffffff;
@@ -452,7 +438,7 @@ p {
 }
 
 h1 {
-  margin: 10px 0px 10px 0px;
+  margin: 10px 0;
   font-size: 28px;
   font-family: var(--title);
   font-weight: 300;
@@ -461,7 +447,7 @@ h1 {
 
 @media only screen and (max-width:700px) {
   h1 {
-    margin: 5px 0px 8px 0px;
+    margin: 5px 0;
     font-size: 24px;
   }
 }
@@ -479,7 +465,6 @@ h2 {
 
 @media only screen and (max-width:700px) {
   h2 {
-    margin: 10px 0px 3px 0px;
     font-size: 17px;
   }
 }
@@ -498,6 +483,7 @@ h3 {
 
 @media only screen and (max-width:700px) {
   h3 {
+    margin: 15px 0px 3px 0px;
     font-size: 15px;
   }
 }
@@ -550,9 +536,8 @@ thead {
 
 /* 6th total */
 table.total {
-  border-left: solid 1px #666666;
-  border-right: solid 1px #666666;
-  border-top: solid 1px #666666;
+  border-width: 1px 1px 0 1px;
+  border: solid #666666;
 }
 
 table.total th {
@@ -590,7 +575,6 @@ profile {
 .photo_profile {
   width: 120px;
   height: 145px;
-  -o-object-fit: cover;
   object-fit: cover;
   /*coverは強制的に枠に当てはめて、containはタテヨコ比を維持する*/
 }
@@ -643,7 +627,7 @@ profile {
 }
 
 @media only screen and (max-width:700px) {
-  h3 {
+  .comment {
     font-size: 15px;
   }
 }
@@ -677,9 +661,7 @@ inquiry {
 @media only screen and (max-width:700px) {
   profile {
     border: 1px var(--theme1) solid;
-    -ms-grid-rows: 36px 4fr;
     grid-template-rows: 36px;
-    -ms-grid-columns: 107px 165px 1fr;
     grid-template-columns: 107px 165px 1fr;
     grid-template-areas:
       "photo job name"
@@ -751,14 +733,12 @@ inquiry {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   font-size: 28px;
   font-family: var(--title);
   font-weight: 300;
   color: var(--theme1);
   padding: 0px 0px 0px 5px;
 }
-
 @media only screen and (max-width:700px) {
   .midasi {
     height: 50px;
@@ -872,8 +852,6 @@ answer {
 .ans {
   grid-area: ans;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   font-size: 14px;
   padding: 5px;
@@ -1007,7 +985,6 @@ annual {
 .annual_detail {
   grid-area: annual_detail;
   font-size: 14px;
-  padding-left: 5px;
   padding: 0px 0px 0px 10px;
   font-family: var(--sentence);
   font-weight: 300;
@@ -1024,7 +1001,7 @@ annual {
 /*おすすめコンテンツ*/
 recommend {
   display: grid;
-  margin: 8px 0px 8px 0px;
+  margin: 8px 0;
   color: #000000;
   font-family: var(--title);
   background-color: rgba(232, 244, 247, 0.92);
@@ -1056,13 +1033,9 @@ recommend:hover {
 }
 
 .rec_photo {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 1;
   width: 120px;
   height: 120px;
   grid-area: rec_photo;
-  -o-object-fit: cover;
   object-fit: cover;
   /*coverは強制的に枠に当てはめて、containはタテヨコ比を維持する*/
 }
@@ -1075,8 +1048,6 @@ recommend:hover {
 }
 
 .rec_title {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
   grid-area: rec_title;
   font-weight: 100;
   font-size: 25px;
@@ -1094,8 +1065,6 @@ recommend:hover {
 }
 
 .rec_detail {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
   grid-area: rec_detail;
   font-weight: 300;
   font-size: 14px;
@@ -1121,19 +1090,10 @@ recommend:hover {
     font-weight: 500;
   }
 
-  backtotop a:link {
-    color: #ffffff;
-  }
-
-  backtotop a:visited {
-    color: #ffffff;
-  }
-
-  backtotop :hover {
-    color: #307e00;
-  }
-
-  backtotop a:active {
+  backtotop a:link,
+  backtotop a:visited,
+  backtotop a:active,
+  backtotop :hover{
     color: #ffffff;
   }
 }
