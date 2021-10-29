@@ -81,16 +81,16 @@ body {
 
 @media only screen and (max-width:700px) {
   .withsidemenu {
-    grid-template-rows: 35px 35px 150px 35px 1fr 92px;
+    grid-template-rows: 35px 60px 150px 35px 1fr 92px;
     /*lnavが上から60pxで固定されるので、lnavが一行で収まる場合でも60pxを維持*/
-    grid-template-columns: 1fr 40px;
+    grid-template-columns: 1fr;
     grid-template-areas:
-      "header     header"
-      "gnav         gnav"
-      "eyecatch eyecatch"
-      "lnav         lnav"
-      "main         main"
-      "footer     footer";
+      "header"
+      "gnav"
+      "eyecatch"
+      "lnav"
+      "main"
+      "footer";
   }
 }
 
@@ -130,7 +130,8 @@ body {
 
 .stick {
   position: sticky;
-  top: 0px;
+  top: 0;
+  left:0;
 }
 
 .stick_lnav {
@@ -175,6 +176,9 @@ p {
   font-family: var(--sentence);
   font-weight: 300;
   color: #000000;
+}
+@media only screen and (max-width:700px) {
+  font-weight: 400;
 }
 
 h1 {
@@ -234,7 +238,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1;
   text-align: center;
   margin: 0;
@@ -244,7 +249,6 @@ header {
 gnav {
   grid-area: gnav;
   height: 35px;
-  position: relative;
   z-index: 2;
   padding: 0;
   margin: 0;
