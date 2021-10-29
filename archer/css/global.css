@@ -81,7 +81,7 @@ body {
 
 @media only screen and (max-width:700px) {
   .withsidemenu {
-    grid-template-rows: 35px 60px 150px 35px 1fr 92px;
+    grid-template-rows: 35px 35px 150px 35px 1fr 92px;
     /*lnavが上から60pxで固定されるので、lnavが一行で収まる場合でも60pxを維持*/
     grid-template-columns: 1fr 40px;
     grid-template-areas:
@@ -158,6 +158,13 @@ body {
   .hide_mob {
     display: none
   }
+}
+
+.warning {
+  background-color: rgba(255, 208, 8, 0.51);
+  border: 2px #ff8800 solid;
+  border-radius: 10px;
+  padding: 4px;
 }
 
 /*======文字のサイズ関連======*/
