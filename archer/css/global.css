@@ -22,15 +22,48 @@ html {
   --sentence: "Noto Sans JP", sans-serif;
 }
 
+/* 【リンクの文字色】 */
+main a:link,
+main a:visited,
+main a:active,
+footer a:link,
+footer a:visited,
+footer a:active,
+lnav a:link,
+lnav a:visited,
+lnav a:active {
+  color: var(--linkcolor);
+}
+
+main a:hover,
+footer a:hover,
+lnav a:hover {
+  color: var(--linkhover);
+}
+
+/*これにより、ページ内リンクがメニューの下に来る*/
+a.anchor {
+  display: block;
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+@media only screen and (max-width:700px) {
+  a.anchor {
+    padding-top: 70px;
+    margin-top: -70px;
+  }
+}
+
 /* 【全体の背景・テキストなど】 */
 body {
-  max-width: 1200px;
+  max-width: 1000px;
   display: grid;
   justify-content: center;
   margin: 0;
   color: #000000;
   background-color: #ffffff;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: var(--sentence);
 }
 
 /*bodyのclassは全部でみっつ。サイドメニューあり/なしとindex*/
@@ -108,6 +141,22 @@ body {
 @media only screen and (max-width:700px) {
   .stick_lnav {
     top: 60px;
+  }
+}
+
+/*
+.hideがついたものはPC版では見えない
+.hide_mobがついたものはモバイル版では見えない
+*/
+@media only screen and (min-width:701px) {
+  .hide {
+    display: none
+  }
+}
+
+@media only screen and (max-width:700px) {
+  .hide_mob {
+    display: none
   }
 }
 
@@ -353,8 +402,7 @@ eyecatch a:active {
 
   lnav a {
     text-decoration: none;
-    display: block;
-    /*枠内全てで反応*/
+    display: block; /*枠内全てで反応*/
   }
 
   lnav ul {
@@ -411,10 +459,7 @@ eyecatch a:active {
 
 main {
   grid-area: main;
-  padding: 5px;
   background-color: #ffffff;
-  padding: 3px;
-  margin: 0px;
   font-family: var(--sentence);
   font-weight: 300;
   color: #000000;
@@ -436,8 +481,7 @@ footer {
   display: grid;
   position: relative;
   z-index: 5;
-  margin-top: 10px;
-  padding-right: 5px;
+  margin-top: 16px;
   font-weight: 500;
   background-color: var(--light);
   grid-template-rows: 56px 20px;
@@ -502,239 +546,22 @@ footer {
   grid-area: cpright;
 }
 
-/* index.html専用 */
-topcontents {
-  display: grid;
+/* 【パンくずリスト】 */
+ol {
+  list-style-type: none;
+  display: flex;
+  padding: 0 6px;
   margin: 0;
-  padding: 0;
+  background-color: var(--light);
   width: 100%;
-  grid-template-rows: 18.8% 32.6% 46%;
-  grid-template-columns: 60% 40%;
-  grid-template-areas:
-    "img1 img2"
-    "img1 img3"
-    "img4 img4";
+  height: 22px;
 }
 
-@media only screen and (max-width:700px) {
-  topcontents {
-  grid-template-rows: 1fr;
-  grid-template-columns: 100%;
-  grid-template-areas:
-    "img1"
-    "sm_img3"
-    "sm_img4";
-  }
+ol.breadcrumb li::after {
+  content: ">";
+  margin: 0 10px;
 }
 
-.img1 {
-  grid-area: img1;
-  margin: 0px;
-  padding: 0px;
-}
-
-.img2 {
-  width: 100%;
-  grid-area: img2;
-  margin: 0px;
-  padding: 0px;
-}
-
-.img3 {
-  width: 100%;
-  grid-area: img3;
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden;
-}
-
-.img4 {
-  width: 100%;
-  grid-area: img4;
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden;
-}
-
-@media only screen and (max-width:700px) {
-  .img2,
-  .img3,
-  .img4 {
-    display: none;
-    /*スマホ版では割愛*/
-  }
-}
-
-.sm_img3 {
-  grid-area: sm_img3;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden;
-}
-
-.sm_img4 {
-  width: 100%;
-  grid-area: sm_img4;
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden;
-}
-
-/* マウスオンで拡大するclass */
-.img_expand:hover img {
-  transform: scale(1.02);
-  opacity: 0.7;
-  transition-duration: 0.5s;
-}
-
-@media only screen and (min-width:701px) {
-
-  .sm_img3,
-  .sm_img4 {
-    display: none;
-  }
-}
-
-/*この要素はnewsとdownload内に存在するのでそれに合わせて幅指定。*/
-topictitle {
-  width: 100%;
-  float: left;
-  font-size: 24px;
-  font-family: "M plus 1p", sans-serif;
-  font-weight: 400;
-  color: #01678d;
-  border-bottom: 1px #000000 solid;
-}
-
-@media only screen and (max-width:700px) {
-  topictitle {
-    font-size: 20px;
-  }
-}
-
-.topic {
-  display: -ms-grid;
-  display: grid;
-  margin: 0px;
-  padding: 3px 0px;
-  width: 100%;
-  grid-template-rows: 1fr;
-  grid-template-columns: 60px calc(100% - 60px);
-  grid-template-areas: "date detail";
-  border-bottom: 1px #666666 dotted;
-}
-
-.date {
-  display: flex;
-  align-items: center;
-  grid-area: date;
-  font-family: "M plus 1p", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  border-right: 2px #088cbe solid;
-  text-align: center;
-  color: #666666;
-}
-
-.detail {
-  margin-left: 3px;
-  grid-area: detail;
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  text-align: left;
-}
-
-download {
-  width: 45%;
-  height: 350px;
-  overflow: scroll;
-  float: right;
-  margin-right: 8px;
-  padding: 8px;
-  border-bottom: 1px #000000 solid;
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-}
-
-news {
-  width: 45%;
-  height: 450px;
-  overflow: scroll;
-  float: left;
-  margin-left: 8px;
-  padding: 8px;
-  border-bottom: 1px #000000 solid;
-}
-
-@media only screen and (max-width:700px) {
-
-  download,
-  news {
-    width: 94%;
-    overflow: hidden;
-  }
-}
-
-/*contents*/
-.conte {
-  display: grid;
-  margin: 0px;
-  padding: 6px 0px;
-  width: 100%;
-  -ms-grid-rows: 1fr;
-  grid-template-rows: 1fr;
-  -ms-grid-columns: 40% 60%;
-  grid-template-columns: 40% 60%;
-  grid-template-areas: "obje capt";
-  border-bottom: 1px #666666 dotted;
-}
-
-/*object*/
-.obje {
-  display: flex;
-  align-items: center;
-  grid-area: obje;
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  border-right: 2px #088cbe solid;
-  color: #666666;
-  text-align: left;
-}
-
-/*caption*/
-.capt {
-  margin-left: 3px;
-  padding-left: 3px;
-  display: flex;
-  align-items: center;
-  grid-area: capt;
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  text-align: left;
-}
-
-.imgtwitter {
-  width: 45%;
-  float: right;
-  margin: 0;
-  padding: 0;
-  margin: 8px 16px 8px 8px;
-}
-
-@media only screen and (max-width:700px) {
-  .imgtwitter {
-    width: 300px;
-    text-align: center;
-  }
-}
-
-.imgtwitter:hover img {
-  transform: scale(1.02);
-  opacity: 0.7;
-  transition-duration: 0.5s;
+ol.breadcrumb li:last-child::after {
+  content: none;
 }

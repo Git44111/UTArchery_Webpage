@@ -8,10 +8,8 @@
   <link rel="icon" type="image/png" href="img/icon.svg">
   <!--スタイルシートの読み込み-->
   <style type="text/css"></style>
-
-
-  <link rel="stylesheet" href="css/parts.css" type="text/css">
-  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/global.css" type="text/css">
+  <link rel="stylesheet" href="css/local.css" type="text/css">
   <!--Webフォント読み込み-->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+JP:wght@100;300;400;600&family=Roboto:wght@100;400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500&display=swap" rel="stylesheet">
@@ -105,117 +103,107 @@
       </ul>
     </div>
 
-    <a name="q1" class="anchor">
-      <question>
-        <div class="Q">Q1</div>
-        <div class="ques">いままでアーチェリーをやったことがなくても大丈夫ですか?</div>
-      </question>
-    </a>
-    <answer>
-      <div class="A">A1</div>
-      <div class="ans">大学から始める人が多いスポーツなので大丈夫です。1年生でもチームの主力として頑張っています。 ちなみに2020年9月現在、部員25名のうち経験者は6名のみです。</div>
-    </answer>
+    <a name="q1" class="anchor"></a>
+      <q-and-a class="question">
+        <div class="mark Q">Q1</div>
+        <div class="description">いままでアーチェリーをやったことがなくても大丈夫ですか?</div>
+      </q-and-a>
+    <!--  ここはAを右に出したいのであとから書いている  -->
+    <q-and-a class="answer">
+      <div class="description">大学から始める人が多いスポーツなので大丈夫です。1年生でもチームの主力として頑張っています。 ちなみに2020年9月現在、部員25名のうち経験者は6名のみです。</div>
+      <div class="mark A">A1</div>
+    </q-and-a>
 
-    <a name="q2" class="anchor">
-      <question>
-        <div class="Q">Q2</div>
-        <div class="ques">運動会だと上下関係が厳しいのですか?</div>
-      </question>
-    </a>
-    <answer>
-      <div class="A">A2</div>
-      <div class="ans">最低限の上下関係は守ってもらいますが、真剣・安全に練習に取り組むために必要な程度であり、特に厳しくないと思います。先輩後輩で練習後に一緒に食事や遊びに行くなど、むしろ上下間の仲がいい方だと思います。</div>
-    </answer>
-    <a name="q3" class="anchor">
-      <question>
-        <div class="Q">Q3</div>
-        <div class="ques">勉強と部活は両立できますか?</div>
-      </question>
-    </a>
-    <answer>
-      <div class="A">A3</div>
-      <div class="ans">できます！駒練は週2日ですし、その後は基本的には自主練がメインとなるため、自分の時間を確保しやすくなっています。中には85点以上の平均点をとる部員もおり、それ以外でもみな希望の学科に進学するのに十分な点数は取れています。</div>
-    </answer>
-    <a name="q4" class="anchor">
-      <question>
-        <div class="Q">Q4</div>
-        <div class="ques">バイトはできますか?</div>
-      </question>
-    </a>
-    <answer>
-      <div class="A">A4</div>
-      <div class="ans">もちろんです。かなりの部員がバイト、部活、勉強を両立しています。 洋弓部では週1回土曜日の公式練習以外は自由に練習予定を組めるので、バイトも十分に可能です。</div>
-    </answer>
-    <a name="q5" class="anchor">
-      <question>
-        <div class="Q">Q5</div>
-        <div class="ques">大学から始めても活躍できますか?</div>
-      </question>
-    </a>
-    <answer>
-      <div class="A">A5</div>
-      <div class="ans">部内には経験者が少なく、新しく始めた1年生にも十分に活躍のチャンスはあります。私たちも1年生を戦力として期待しています。 例年、数名の1年生がリーグ戦にレギュラーメンバーとして出場しています。 また、競技人口が少ないので、他の競技に比べて未経験者がインカレや全日本選手権に出場できる可能性が大きくあります。 実際、うちの洋弓部からも毎年のようにインカレ出場者を輩出しています。 新人の指導に関しては創部以来のしっかりとしたシステムが確立されていますので、不安はまったく不要です! これからスポーツをはじめるならアーチェリーですよ!!</div>
-    </answer>
-    <a name="q6" class="anchor">
-      <question>
-        <div class="Q">Q6</div>
-        <div class="ques">けがしたり危険なスポーツですか?</div>
-      </question>
-    </a>
-    <answer>
-      <div class="A">A6</div>
-      <div class="ans">アーチェリーは弓矢を用いるため、まず最初に安全面の徹底的な指導を行います。その下で行うため、事故は滅多に起こりません。また、走るといった急な動きはしないため、大怪我はまずありません。起こるとするならば、肩や背筋の痛みですが、入念なストレッチで防げるものです。</div>
-    </answer>
-    <a name="q7" class="anchor">
-      <question>
-        <div class="Q">Q7</div>
-        <div class="ques">無理やりお酒を飲まされたりしませんか?</div>
-      </question>
-    </a>
-    <answer>
-      <div class="A">A7</div>
-      <div class="ans">まず未成年へは絶対に飲ませません。成人した部員にも強要することはなく、各自のペースでほどほどにといった程度です。</div>
-    </answer>
-    <a name="q8" class="anchor">
-      <question>
-        <div class="Q">Q8</div>
-        <div class="ques">洋弓部は強いですか?</div>
-      </question>
-    </a>
-    <answer>
-      <div class="A">A8</div>
-      <div class="ans">強いです。東大洋弓部は2018年まで関東学生リーグの1部に所属し、数多の強豪校と戦ってきました。現在は2部所属となっておりますが、実力は2部校の中ではトップクラスであり、現在は1部復帰を目標としています。</div>
-    </answer>
-    <a name="q9" class="anchor">
-      <question>
-        <div class="Q">Q9</div>
-        <div class="ques">洋弓部の雰囲気はどんな感じですか? </div>
-      </question>
-    </a>
-    <answer>
-      <div class="A">A9</div>
-      <div class="ans">練習は真剣に、それ以外は楽しくやっています。合宿等で長時間一緒に過ごしたりするので、 男女関係なく、部員同士の仲もとてもよいです。全体練習のときや団体戦の試合ではみんなで盛り上がってます。</div>
-    </answer>
-    <a name="q10" class="anchor">
-      <question>
-        <div class="Q">Q10</div>
-        <div class="ques">女子も活躍できますか?</div>
-      </question>
-    </a>
-    <answer>
-      <div class="A">A10</div>
-      <div class="ans">もちろんです!! アーチェリーは弓の強ければ強いほど的中するというものではありません。各自が自分の身体に合わせた道具を使うため、女子でも男子に勝つことができ、部でトップになることだって可能です。スポーツで男子に勝つならアーチェリーがもってこいです！</div>
-    </answer>
-    <a name="q11" class="anchor">
-      <question>
-        <div class="Q">Q11</div>
-        <div class="ques">楽しいイベントはありますか? </div>
-      </question>
-    </a>
-    <answer>
-      <div class="A">A11</div>
-      <div class="ans">いろいろあります。合宿はたくさん練習するので大変ですが、みんなで泊まって過ごすのはとても楽しいです。 他にも、練習後にみんなでご飯を食べたり、試合後の打ち上げなど楽しいイベントは盛りだくさんです。</div>
-    </answer>
+    <a name="q2" class="anchor"></a>
+      <q-and-a class="question">
+        <div class="mark Q">Q2</div>
+        <div class="description">運動会だと上下関係が厳しいのですか?</div>
+      </q-and-a>
+    <q-and-a class="answer">
+      <div class="description">最低限の上下関係は守ってもらいますが、真剣・安全に練習に取り組むために必要な程度であり、特に厳しくないと思います。先輩後輩で練習後に一緒に食事や遊びに行くなど、むしろ上下間の仲がいい方だと思います。</div>
+      <div class="mark A">A2</div>
+    </q-and-a>
+    <a name="q3" class="anchor"></a>
+      <q-and-a class="question">
+        <div class="mark Q">Q3</div>
+        <div class="description">勉強と部活は両立できますか?</div>
+      </q-and-a>
+    <q-and-a class="answer">
+      <div class="description">できます！駒練は週2日ですし、その後は基本的には自主練がメインとなるため、自分の時間を確保しやすくなっています。中には85点以上の平均点をとる部員もおり、それ以外でもみな希望の学科に進学するのに十分な点数は取れています。</div>
+      <div class="mark A">A3</div>
+    </q-and-a>
+    <a name="q4" class="anchor"></a>
+      <q-and-a class="question">
+        <div class="mark Q">Q4</div>
+        <div class="description">バイトはできますか?</div>
+      </q-and-a>
+    <q-and-a class="answer">
+      <div class="description">もちろんです。かなりの部員がバイト、部活、勉強を両立しています。 洋弓部では週1回土曜日の公式練習以外は自由に練習予定を組めるので、バイトも十分に可能です。</div>
+      <div class="mark A">A4</div>
+    </q-and-a>
+    <a name="q5" class="anchor"></a>
+      <q-and-a class="question">
+        <div class="mark Q">Q5</div>
+        <div class="description">大学から始めても活躍できますか?</div>
+      </q-and-a>
+    <q-and-a class="answer">
+      <div class="description">部内には経験者が少なく、新しく始めた1年生にも十分に活躍のチャンスはあります。私たちも1年生を戦力として期待しています。 例年、数名の1年生がリーグ戦にレギュラーメンバーとして出場しています。 また、競技人口が少ないので、他の競技に比べて未経験者がインカレや全日本選手権に出場できる可能性が大きくあります。 実際、うちの洋弓部からも毎年のようにインカレ出場者を輩出しています。 新人の指導に関しては創部以来のしっかりとしたシステムが確立されていますので、不安はまったく不要です! これからスポーツをはじめるならアーチェリーですよ!!</div>
+      <div class="mark A">A5</div>
+    </q-and-a>
+    <a name="q6" class="anchor"></a>
+      <q-and-a class="question">
+        <div class="mark Q">Q6</div>
+        <div class="description">けがしたり危険なスポーツですか?</div>
+      </q-and-a>
+    <q-and-a class="answer">
+      <div class="description">アーチェリーは弓矢を用いるため、まず最初に安全面の徹底的な指導を行います。その下で行うため、事故は滅多に起こりません。また、走るといった急な動きはしないため、大怪我はまずありません。起こるとするならば、肩や背筋の痛みですが、入念なストレッチで防げるものです。</div>
+      <div class="mark A">A6</div>
+    </q-and-a>
+    <a name="q7" class="anchor"></a>
+      <q-and-a class="question">
+        <div class="mark Q">Q7</div>
+        <div class="description">無理やりお酒を飲まされたりしませんか?</div>
+      </q-and-a>
+    <q-and-a class="answer">
+      <div class="description">まず未成年へは絶対に飲ませません。成人した部員にも強要することはなく、各自のペースでほどほどにといった程度です。</div>
+      <div class="mark A">A7</div>
+    </q-and-a>
+    <a name="q8" class="anchor"></a>
+      <q-and-a class="question">
+        <div class="mark Q">Q8</div>
+        <div class="description">洋弓部は強いですか?</div>
+      </q-and-a>
+    <q-and-a class="answer">
+      <div class="description">強いです。東大洋弓部は2018年まで関東学生リーグの1部に所属し、数多の強豪校と戦ってきました。現在は2部所属となっておりますが、実力は2部校の中ではトップクラスであり、現在は1部復帰を目標としています。</div>
+      <div class="mark A">A8</div>
+    </q-and-a>
+    <a name="q9" class="anchor"></a>
+      <q-and-a class="question">
+        <div class="mark Q">Q9</div>
+        <div class="description">洋弓部の雰囲気はどんな感じですか? </div>
+      </q-and-a>
+    <q-and-a class="answer">
+      <div class="description">練習は真剣に、それ以外は楽しくやっています。合宿等で長時間一緒に過ごしたりするので、 男女関係なく、部員同士の仲もとてもよいです。全体練習のときや団体戦の試合ではみんなで盛り上がってます。</div>
+      <div class="mark A">A9</div>
+    </q-and-a>
+    <a name="q10" class="anchor"></a>
+      <q-and-a class="question">
+        <div class="mark Q">Q10</div>
+        <div class="description">女子も活躍できますか?</div>
+      </q-and-a>
+    <q-and-a class="answer">
+      <div class="description">もちろんです!! アーチェリーは弓の強ければ強いほど的中するというものではありません。各自が自分の身体に合わせた道具を使うため、女子でも男子に勝つことができ、部でトップになることだって可能です。スポーツで男子に勝つならアーチェリーがもってこいです！</div>
+      <div class="mark A">A10</div>
+    </q-and-a>
+    <a name="q11" class="anchor"></a>
+      <q-and-a class="question">
+        <div class="mark Q">Q11</div>
+        <div class="description">楽しいイベントはありますか? </div>
+      </q-and-a>
+    <q-and-a class="answer">
+      <div class="description">いろいろあります。合宿はたくさん練習するので大変ですが、みんなで泊まって過ごすのはとても楽しいです。 他にも、練習後にみんなでご飯を食べたり、試合後の打ち上げなど楽しいイベントは盛りだくさんです。</div>
+      <div class="mark A">A11</div>
+    </q-and-a>
   </main>
 
   <!--フッター-->

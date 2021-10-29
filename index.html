@@ -8,11 +8,8 @@
   <link rel="icon" type="image/png" href="archer/img/icon.svg">
   <!--スタイルシートの読み込み-->
   <style type="text/css"></style>
-  <link rel="stylesheet" href="archer/css/parts_mob.css" type="text/css" media="(max-width:700px)">
-  <link rel="stylesheet" href="archer/css/parts.css" type="text/css">
-  <link rel="stylesheet" href="archer/css/layout.css" type="text/css">
-  <!--これが優先されるように-->
-
+  <link rel="stylesheet" href="archer/css/global.css" type="text/css">
+  <link rel="stylesheet" href="archer/css/local.css" type="text/css">
   <!--Webフォント読み込み-->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+JP:wght@100;300;400;600&family=Roboto:wght@100;400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500&display=swap" rel="stylesheet">
@@ -34,7 +31,6 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-177519445-1');
-
   </script>
 </head>
 <!--スマホでのみ、ページ上部に戻るボタンを出す/body外に置く-->
@@ -54,95 +50,107 @@
     </ul>
   </gnav>
   <main>
-    <topcontents>
-      <div class="img1">
-        <img src="archer/img/index-1.png" alt="" border="0" width=100%>
+    <!--  PCのみで表示  -->
+    <topcontents class="hide_mob">
+      <div class="pc-top">
+        <div class="top-60">
+          <img src="archer/img/index-1.png" alt="" border="0" width=100%>
+        </div>
+        <div class="top-40">
+          <img src="archer/img/index-2.png" alt="" border="0" width=100%>
+          <a href="archer/about.html" class="img_expand">
+            <img src="archer/img/index-3.png" alt="" border="0" width=100%></a>
+        </div>
       </div>
-      <div class="img2">
-        <img src="archer/img/index-2.png" alt="" border="0" width=100%>
-      </div>
-      <div class="img3 img_expand">
-        <a href="archer/about.html">
-          <img src="archer/img/index-3.png" alt="" border="0" width=100%></a>
-      </div>
-      <div class="img4 img_expand">
-        <a href="archer/recruit.html">
+      <div class="top-100">
+        <a href="archer/recruit.html" class="img_expand">
           <img src="archer/img/index-4.png" alt="" border="0" width=100%></a>
       </div>
-      <div class="sm_img3 img_expand">
-        <a href="archer/about.html">
+    </topcontents>
+    <!--  スマホのみで表示  -->
+    <topcontents class="hide">
+      <div class="top-100">
+        <img src="archer/img/index-1.png" alt="" border="0" width=100%>
+      </div>
+      <div class="top-100">
+        <a href="archer/about.html" class="img_expand">
           <img src="archer/img/smart_2.png" alt="" border="0" width=100%></a>
       </div>
-      <div class="sm_img4 img_expand">
-        <a href="archer/recruit.html">
+      <div class="top-100">
+        <a href="archer/recruit.html" class="img_expand">
           <img src="archer/img/smart_3.png" alt="" border="0" width=100%></a>
       </div>
     </topcontents>
-    <news>
-      <topictitle>NEWS</topictitle>
-      <div class="topic">
-        <div class="date">2021<br>03/22</div>
-        <div class="detail">新歓ページを更新しました。洋弓部では新入部員を大募集中です！(→<a href="archer/recruit.html">こちら</a>)</div>
+    <div class="bottomcontents">
+      <div class="container">
+        <div class="index-contents news">
+          <div class="topictitle">NEWS</div>
+          <div class="topic">
+            <div class="date">2021<br>03/22</div>
+            <div class="detail">新歓ページを更新しました。洋弓部では新入部員を大募集中です！(→<a href="archer/recruit.html">こちら</a>)</div>
+          </div>
+          <div class="topic">
+            <div class="date">2021<br>02/22</div>
+            <div class="detail">試合結果を更新しました。(→<a href="archer/result.html">こちら</a>)</div>
+          </div>
+          <div class="topic">
+            <div class="date">2021<br>02/13</div>
+            <div class="detail">弊部から全日本室内アーチェリー選手権大会に渡邊(3年)が出場しました！(→<a href="archer/result.html">こちら</a>)</div>
+          </div>
+          <div class="topic">
+            <div class="date">2020<br>09/25</div>
+            <div class="detail">ホームページを新調しました。</div>
+          </div>
+          <div class="topic">
+            <div class="date">2020<br>09/16</div>
+            <div class="detail">弊部から野上(4年)がインカレターゲットに出場、エリミネーションラウンドに残留しました！(→<a href="archer/result.html">こちら</a>)</div>
+          </div>
+          <div class="topic">
+            <div class="date">2020<br>04/04</div>
+            <div class="detail">2020年度新歓パンフレットを公開。ぜひご覧ください！(→<a href="archer/file/2020pamphlet.pdf">こちら</a>)</div>
+          </div>
+          <div class="topic">
+            <div class="date">2020<br>03/07</div>
+            <div class="detail">試合結果を更新しました。(→<a href="archer/result19.html">こちら</a>)</div>
+          </div>
+          <div class="topic">
+            <div class="date">2019<br>10/05</div>
+            <div class="detail">2019年度秋新歓パンフレットを公開。ぜひご覧ください！(→<a href="archer/file/2019pamphlet_a.pdf">こちら</a>)</div>
+          </div>
+          <div class="topic">
+            <div class="date">2019<br>04/30</div>
+            <div class="detail">試合結果を更新しました。(→<a href="archer/result18.html">こちら</a>)</div>
+          </div>
+          <div class="topic">
+            <div class="date">2019<br>03/23</div>
+            <div class="detail">2019年度新歓パンフレットを公開。ぜひご覧ください！(→<a href="archer/file/2019pamphlet.pdf">こちら</a>)</div>
+          </div>
+        </div>
       </div>
-      <div class="topic">
-        <div class="date">2021<br>02/22</div>
-        <div class="detail">試合結果を更新しました。(→<a href="archer/result.html">こちら</a>)</div>
+      <div class="container">
+        <div class="index-contents download">
+          <div class="topictitle">DOWNLOADS</div>
+          ご自由にお持ち帰りください。(新しいタブで開きます。)<br>
+          <div class="conte">
+            <div class="obje"><a href="archer/file/2021pamphlet.pdf" target="_blank" rel="noopener noreferrer">新歓パンフレット(2021)</a></div>
+            <div class="capt">新歓パンフレットです。新入生向け情報がてんこ盛りです！</div>
+          </div>
+          <div class="conte">
+            <div class="obje"><a href="archer/file/dousin.pdf" target="_blank" rel="noopener noreferrer">記録用同心円</a></div>
+            <div class="capt">的中位置や点数を記録する同心円です。</div>
+          </div>
+          <div class="conte">
+            <div class="obje"><a href="archer/file/dousin_new.pdf" target="_blank" rel="noopener noreferrer">新・記録用同心円</a></div>
+            <div class="capt">上の同心円のレイアウトを変更。記録しやすくしました。</div>
+          </div>
+          <div class="conte">
+            <div class="obje"><a href="archer/file/dousin_indoor.pdf" target="_blank" rel="noopener noreferrer">インドア用同心円</a></div>
+            <div class="capt">インドア用の同心円です。</div>
+          </div>
+        </div>
+        <div class="imgtwitter img_expand"><a href="https://twitter.com/akishin_archery" target="_blank" rel="noopener noreferrer"><img src="archer/img/twitter.png" alt="" border="0"></a></div>
       </div>
-      <div class="topic">
-        <div class="date">2021<br>02/13</div>
-        <div class="detail">弊部から全日本室内アーチェリー選手権大会に渡邊(3年)が出場しました！(→<a href="archer/result.html">こちら</a>)</div>
-      </div>
-      <div class="topic">
-        <div class="date">2020<br>09/25</div>
-        <div class="detail">ホームページを新調しました。</div>
-      </div>
-      <div class="topic">
-        <div class="date">2020<br>09/16</div>
-        <div class="detail">弊部から野上(4年)がインカレターゲットに出場、エリミネーションラウンドに残留しました！(→<a href="archer/result.html">こちら</a>)</div>
-      </div>
-      <div class="topic">
-        <div class="date">2020<br>04/04</div>
-        <div class="detail">2020年度新歓パンフレットを公開。ぜひご覧ください！(→<a href="archer/file/2020pamphlet.pdf">こちら</a>)</div>
-      </div>
-      <div class="topic">
-        <div class="date">2020<br>03/07</div>
-        <div class="detail">試合結果を更新しました。(→<a href="archer/result19.html">こちら</a>)</div>
-      </div>
-      <div class="topic">
-        <div class="date">2019<br>10/05</div>
-        <div class="detail">2019年度秋新歓パンフレットを公開。ぜひご覧ください！(→<a href="archer/file/2019pamphlet_a.pdf">こちら</a>)</div>
-      </div>
-      <div class="topic">
-        <div class="date">2019<br>04/30</div>
-        <div class="detail">試合結果を更新しました。(→<a href="archer/result18.html">こちら</a>)</div>
-      </div>
-      <div class="topic">
-        <div class="date">2019<br>03/23</div>
-        <div class="detail">2019年度新歓パンフレットを公開。ぜひご覧ください！(→<a href="archer/file/2019pamphlet.pdf">こちら</a>)</div>
-      </div>
-
-    </news>
-    <download>
-      <topictitle>DOWNLOADS</topictitle>
-      ご自由にお持ち帰りください。(新しいタブで開きます。)<br>
-      <div class="conte">
-        <div class="obje"><a href="archer/file/2021pamphlet.pdf" target="_blank" rel="noopener noreferrer">新歓パンフレット(2021)</a></div>
-        <div class="capt">新歓パンフレットです。新入生向け情報がてんこ盛りです！</div>
-      </div>
-      <div class="conte">
-        <div class="obje"><a href="archer/file/dousin.pdf" target="_blank" rel="noopener noreferrer">記録用同心円</a></div>
-        <div class="capt">的中位置や点数を記録する同心円です。</div>
-      </div>
-      <div class="conte">
-        <div class="obje"><a href="archer/file/dousin_new.pdf" target="_blank" rel="noopener noreferrer">新・記録用同心円</a></div>
-        <div class="capt">上の同心円のレイアウトを変更。記録しやすくしました。</div>
-      </div>
-      <div class="conte">
-        <div class="obje"><a href="archer/file/dousin_indoor.pdf" target="_blank" rel="noopener noreferrer">インドア用同心円</a></div>
-        <div class="capt">インドア用の同心円です。</div>
-      </div>
-    </download>
-    <div class="imgtwitter"><a href="https://twitter.com/akishin_archery" target="_blank" rel="noopener noreferrer"><img src="archer/img/twitter.png" alt="" border="0" width=100%></a></div>
+    </div>
   </main>
 
   <!--フッター-->
@@ -157,6 +165,4 @@
   </footer>
   <!--JavaScriptの読み込み、ハンバーガーメニューに利用-->
   <script type="text/javascript" src="hamburger.js"></script>
-</body>
-
-</html>
+</body></html>
