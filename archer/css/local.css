@@ -235,7 +235,6 @@ td {
   text-align: center;
   vertical-align: middle;
   font-family: var(--sentence);
-  font-weight: 300;
   font-size: 13px;
 }
 
@@ -292,7 +291,6 @@ inquiry .midasi {
   width: 180px;
   font-size: 28px;
   font-family: var(--title);
-  font-weight: 300;
   color: var(--theme1);
 }
 
@@ -330,7 +328,6 @@ profile {
   min-height: 10vh;
   margin: 8px 4px;
   border: 1px var(--theme1) solid;
-  font-weight: 300;
 }
 
 profile .photo {
@@ -353,7 +350,7 @@ profile .textarea {
 }
 
 profile .name {
-  font-weight: 100;
+  font-weight: 300;
   font-size: 24px;
   border-bottom: 2px var(--theme1) solid;
   color: rgb(15, 58, 96)
@@ -363,13 +360,11 @@ profile .name .job {
   display: inline-block;
   min-width: 25%;
   margin-right: 8px;
-  font-weight: 300;
   font-size: 18px;
 }
 
 profile .text {
-  font-weight: 300;
-  font-size: 16px;
+  font-size: 14px;
   padding: 1px 0;
 }
 
@@ -383,7 +378,6 @@ profile .text {
     min-height: 10vh;
     margin: 4px;
     border: 1px var(--theme1) solid;
-    font-weight: 300;
   }
 
   profile .photo {
@@ -396,6 +390,7 @@ profile .text {
 
   profile .name {
     font-size: 18px;
+    padding: 2px 0;
   }
 
   profile .name .job {
@@ -403,7 +398,7 @@ profile .text {
   }
 
   profile .text {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
@@ -519,30 +514,18 @@ q-and-a .description {
 }
 
 annual {
-  display: grid;
+  width:98%;
+  display: flex;
+  flex-wrap:nowrap;
   margin: 8px 0;
-  color: #000000;
   font-family: var(--title);
   background-color: rgba(232, 244, 247, 0.92);
   min-height: 10vh;
   border: 1px var(--theme1) solid;
-  grid-template-rows: 40px 1fr;
-  grid-template-columns: 180px 1fr;
-  grid-template-areas:
-    "annual_image annual_title"
-    "annual_image annual_detail";
-}
-
-@media only screen and (max-width:700px) {
-  annual {
-    grid-template-rows: 30px 1fr;
-    grid-template-columns: 120px 1fr;
-  }
 }
 
 /*これは入れ物*/
-.annual_image {
-  grid-area: annual_image;
+annual .annual_image {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -556,30 +539,35 @@ annual {
 }
 
 @media only screen and (max-width:700px) {
-  annual {
+  .annual_pic {
     width: 120px;
     height: 120px;
   }
 }
 
+annual .annual_text{
+  flex:1;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
 .annual_title {
-  grid-area: annual_title;
-  font-weight: 100;
-  font-size: 25px;
-  padding: 0px 0px 0px 10px;
+  width:100%;
+  font-size: 24px;
   font-family: var(--title);
-  font-weight: 300;
   border-bottom: 1px var(--theme1) solid;
   color: var(--theme1);
 }
 
 .annual_detail {
-  grid-area: annual_detail;
+  width:100%;
   font-size: 14px;
-  padding: 0px 0px 0px 10px;
   font-family: var(--sentence);
-  font-weight: 300;
   color: #000000;
+}
+@media only screen and (max-width:700px) {
+.annual_title {
+    font-size: 20px;
+  }
 }
 
 /*おすすめコンテンツ*/
@@ -633,10 +621,9 @@ recommend:hover {
 
 .rec_title {
   grid-area: rec_title;
-  font-weight: 100;
+  font-weight: 300;
   font-size: 25px;
   padding: 5px 0px 0px 5px;
-  font-weight: 300;
   border-bottom: 2px var(--theme1) solid;
   color: rgb(15, 58, 96)
 }
@@ -650,7 +637,6 @@ recommend:hover {
 
 .rec_detail {
   grid-area: rec_detail;
-  font-weight: 300;
   font-size: 14px;
   padding: 0px 0px 0px 5px;
 }
@@ -750,7 +736,6 @@ recommend:hover {
 
 .recruit_eye_font {
   font-family: var(--title);
-  font-weight: 300;
   font-size: 18px;
   line-height: 36px;
   margin: 8px;

@@ -172,20 +172,15 @@ body {
 p {
   margin: 8px 0;
   font-size: 14px;
-  padding-left: 5px;
   font-family: var(--sentence);
-  font-weight: 300;
   color: #000000;
-}
-@media only screen and (max-width:700px) {
-  font-weight: 400;
 }
 
 h1 {
+  font-weight: 300;
   margin: 10px 0;
   font-size: 28px;
   font-family: var(--title);
-  font-weight: 300;
   color: var(--theme1);
 }
 
@@ -474,6 +469,7 @@ main {
   font-family: var(--sentence);
   font-weight: 300;
   color: #000000;
+  margin:0 4px;
 }
 @media only screen and (max-width:700px) {
   main {
